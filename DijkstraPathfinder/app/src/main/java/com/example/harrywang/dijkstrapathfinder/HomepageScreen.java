@@ -3,6 +3,7 @@ package com.example.harrywang.dijkstrapathfinder;
 /**
  * Created by Daniel Robertson on 2/12/2018.
  */
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 
@@ -18,7 +19,7 @@ public class HomepageScreen extends AppCompatActivity {
         super.onCreate((savedInstanceState));
         setContentView(R.layout.activity_homepage_screen);
 
-        Button logoutButton = (Button) findViewById(R.id.);
+        Button logoutButton = (Button) findViewById(R.id.logout_button);
         logoutButton.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(HomepageScreen.this, LoginScreen.class);

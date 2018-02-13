@@ -11,7 +11,7 @@
     android:paddingTop="16dp">
 
     <Button
-        android:id="@+id/welcome_register_button"
+        android:id="@+id/logout_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="425dp"
