@@ -19,6 +19,7 @@ public class HomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), LoginScreen.class);
+                finish();
                 startActivity(intent);
             }
         });
@@ -26,6 +27,7 @@ public class HomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), RegistrationScreen.class);
+                finish();
                 startActivity(intent);
             }
         });

@@ -27,6 +27,7 @@ public class LoginScreen extends AppCompatActivity {
                 String pass = password.getText().toString();
                 if (id.equals("user") && pass.equals("pass")) {
                     Intent intent = new Intent(getBaseContext(), ShelterList.class);
+                    finish();
                     startActivity(intent);
                 } else {
                     incorrectLogin.setVisibility(View.VISIBLE);
@@ -38,6 +39,7 @@ public class LoginScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), ShelterList.class);
+                finish();
                 startActivity(intent);
             }
         });

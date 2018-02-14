@@ -17,6 +17,7 @@ public class ShelterList extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), HomeScreen.class);
+                finish();
                 startActivity(intent);
             }
         });
