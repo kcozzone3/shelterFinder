@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Dijkstra\'s Path</string>
     <string name="welcome_screen_app_name">Dijkstra s Path</string>
-    <string name="user_id_or_email_prompt">User ID or Email</string>
+    <string name="user_id_or_email_prompt">User ID</string>
     <string name="password_prompt">Password</string>
     <string name="invalid_credentials_message">This login attempt is invalid. Please enter a valid username and password.</string>
     <string name="login_button_text">Login</string>

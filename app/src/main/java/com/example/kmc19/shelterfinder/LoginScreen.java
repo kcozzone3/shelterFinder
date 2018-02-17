@@ -16,6 +16,7 @@ public class LoginScreen extends AppCompatActivity {
         setContentView(R.layout.activity_login_screen);
         Button loginButton = (Button) findViewById(R.id.login_button);
         Button guestButton = (Button) findViewById(R.id.guest_button);
+        Button cancelButton = (Button) findViewById(R.id.cancel_button);
         final TextView incorrectLogin = (TextView) findViewById(R.id.incorrectText);
         final EditText username = (EditText) findViewById(R.id.id_inputfield);
         final EditText password = (EditText) findViewById(R.id.password_inputfield);
@@ -43,5 +44,14 @@ public class LoginScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), HomeScreen.class);
+                finish();
+                startActivity(intent);
+            }
+        });
+
     }
 }
