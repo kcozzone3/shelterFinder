@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".LoginScreen" />
         <activity android:name=".RegistrationScreen" />
-        <activity android:name=".ShelterList"></activity>
+        <activity android:name=".ShelterList" />
     </application>
 
 </manifest>
