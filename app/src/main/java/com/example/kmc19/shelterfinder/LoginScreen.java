@@ -14,12 +14,12 @@ public class LoginScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
-        Button loginButton = (Button) findViewById(R.id.login_button);
-        Button guestButton = (Button) findViewById(R.id.guest_button);
-        Button cancelButton = (Button) findViewById(R.id.cancel_button);
-        final TextView incorrectLogin = (TextView) findViewById(R.id.incorrectText);
-        final EditText username = (EditText) findViewById(R.id.id_inputfield);
-        final EditText password = (EditText) findViewById(R.id.password_inputfield);
+        Button loginButton = findViewById(R.id.login_button);
+        Button guestButton = findViewById(R.id.guest_button);
+        Button cancelButton = findViewById(R.id.cancel_button);
+        final TextView incorrectLogin = findViewById(R.id.incorrectText);
+        final EditText username = findViewById(R.id.id_inputfield);
+        final EditText password = findViewById(R.id.password_inputfield);
         Model_UserList userList = new Model_UserList();
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override

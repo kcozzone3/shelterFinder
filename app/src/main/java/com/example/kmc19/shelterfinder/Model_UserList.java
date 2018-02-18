@@ -11,9 +11,26 @@ public class Model_UserList {
         listUsers.add(new Model_User());
     }
 
-    public boolean findUser(Model_User user) {
+    public boolean addUser(Model_User user) {
+        if (!findDupe(user)) {
+            listUsers.add(user);
+            return true;
+        }
+        return false;
+    }
+
+    public Model_User findUser(Model_User user) {
         for (Model_User person: listUsers) {
             if (person.equals(user)) {
+                return person;
+            }
+        }
+        throw new java.util.NoSuchElementException("Could not find user within database.");
+    }
+
+    public boolean findDupe(Model_User user) {
+        for (Model_User person: listUsers) {
+            if (person.getEmail().equals(user.getEmail())) {
                 return true;
             }
         }

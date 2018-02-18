@@ -14,4 +14,6 @@
     <string name="valid_email_prompt">Must enter a valid email address.</string>
     <string name="valid_password_prompt">Please enter a password</string>
     <string name="registration_name_prompt">Please enter your full name</string>
+    <string name="password_error_message">Password must be at least 8 characters long and contain both letters and numbers.</string>
+    <string name="name_error_message">Please enter a first and last name.</string>
 </resources>
