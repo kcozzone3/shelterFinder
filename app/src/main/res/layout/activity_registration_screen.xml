@@ -7,7 +7,7 @@
     tools:context="com.example.kmc19.shelterfinder.RegistrationScreen">
 
     <ImageView
-        android:id="@+id/background"
+        android:id="@+id/registration_background"
         android:layout_width="1000dp"
         android:layout_height="1000dp"
         android:layout_marginBottom="8dp"
@@ -24,21 +24,133 @@
         app:layout_constraintVertical_bias="0.498"
         app:srcCompat="@drawable/low_poly_blue_triangles" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <EditText
+        android:id="@+id/registration_email_box"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:drawable/edit_text"
+        android:ems="10"
+        android:hint="@string/user_id_prompt"
+        android:inputType="textEmailAddress"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/registration_name_box"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="TextView"
-        android:textAlignment="center"
+        android:background="@android:drawable/edit_text"
+        android:ems="10"
+        android:hint="@string/registration_name_prompt"
+        android:inputType="textPersonName"
         android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@android:color/background_light"
-        android:textSize="30sp"
+        android:textColorHighlight="@android:color/transparent"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/user_id_or_email_prompt" />
+        app:layout_constraintTop_toBottomOf="@+id/registration_email_error_message" />
+
+    <EditText
+        android:id="@+id/registration_password_box"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/edit_text"
+        android:ems="10"
+        android:hint="@string/valid_password_prompt"
+        android:inputType="textPassword"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registration_name_error_message" />
+
+    <TextView
+        android:id="@+id/registration_email_error_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/valid_email_prompt"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registration_email_box" />
+
+    <TextView
+        android:id="@+id/registration_name_error_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/name_error_message"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registration_name_box" />
+
+    <TextView
+        android:id="@+id/registration_password_error_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/password_error_message"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registration_password_box" />
+
+    <Button
+        android:id="@+id/registration_register_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/holo_green_light"
+        android:text="@string/welcome_screen_register_text"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registration_password_error_message" />
+
+    <Button
+        android:id="@+id/registration_cancel_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/holo_red_dark"
+        android:text="@android:string/cancel"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registration_register_button" />
 
 </android.support.constraint.ConstraintLayout>
