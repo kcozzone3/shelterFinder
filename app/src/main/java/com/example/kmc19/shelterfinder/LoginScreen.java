@@ -14,19 +14,24 @@ public class LoginScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
+
         Button loginButton = findViewById(R.id.login_button);
         Button guestButton = findViewById(R.id.guest_button);
         Button cancelButton = findViewById(R.id.cancel_button);
+
         final TextView incorrectLogin = findViewById(R.id.incorrectText);
         final EditText username = findViewById(R.id.id_inputfield);
         final EditText password = findViewById(R.id.password_inputfield);
-        Model_UserList userList = new Model_UserList();
+
+        final Model_UserList userList = new Model_UserList();
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String id = username.getText().toString();
                 String pass = password.getText().toString();
-                if (id.equals("user") && pass.equals("pass")) {
+                Model_User temp = new Model_User(id, "temp", pass, false);
+                if (userList.loginVerify(temp)) {
                     Intent intent = new Intent(getBaseContext(), ShelterList.class);
                     finish();
                     startActivity(intent);
@@ -36,6 +41,7 @@ public class LoginScreen extends AppCompatActivity {
 
             }
         });
+
         guestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,6 +50,7 @@ public class LoginScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
