@@ -5,65 +5,49 @@ package com.example.kmc19.shelterfinder;
  */
 
 public class Model_User {
-    private String email;
-    private String name;
+    private String userid;
     private String password;
-    private boolean admin;
+    private String email;
 
     public Model_User() {
-        this("example@example.com", "user", "password", false);
+        this("user", "password", "example@example.com");
     }
 
-    public Model_User(String email, String name, String pass, boolean admin) {
-        setEmail(email);
-        setName(name);
-        setPassword(pass);
-        setAdmin(admin);
-    }
-
-    public void setEmail(String email) {
+    public Model_User(String id, String pass, String email) {
+        this.userid = id;
+        this.password = pass;
         this.email = email;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserId(String id) {
+        this.userid = id;
     }
 
     public void setPassword(String pass) {
         this.password = pass;
     }
 
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public String getName() {
-        return name;
+    public String getUserId() {
+        return userid;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public boolean getAdmin() {
-        return admin;
+    public String getEmail() {
+        return email;
     }
 
     @Override
     public boolean equals(Object other) {
-        if (other == null) {
-            return false;
-        } else if (this == other) {
+        Model_User user = (Model_User) other;
+        if (((this.userid.equals(user.userid)) && (this.password.equals(user.password)))) {
             return true;
-        } else if (other instanceof Model_User) {
-            Model_User user = (Model_User) other;
-            if (((this.email.equals(user.getEmail())) && (this.password.equals(user.getPassword())))) {
-                return true;
-            }
         }
         return false;
     }
