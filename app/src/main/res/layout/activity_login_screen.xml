@@ -7,7 +7,7 @@
     tools:context="com.example.kmc19.shelterfinder.LoginScreen">
 
     <ImageView
-        android:id="@+id/registration_background"
+        android:id="@+id/background"
         android:layout_width="1000dp"
         android:layout_height="1000dp"
         android:layout_marginBottom="8dp"
@@ -88,7 +88,8 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_inputfield" />
+        app:layout_constraintTop_toBottomOf="@+id/password_inputfield"
+        android:onClick="OnLogin"/>
 
     <Button
         android:id="@+id/guest_button"
@@ -105,22 +106,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_button" />
-
-    <Button
-        android:id="@+id/cancel_button"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/holo_red_dark"
-        android:text="@android:string/cancel"
-        android:textSize="24sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guest_button" />
 
     <TextView
         android:id="@+id/incorrectText"
