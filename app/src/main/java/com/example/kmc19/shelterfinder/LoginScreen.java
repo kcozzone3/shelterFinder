@@ -3,13 +3,10 @@ package com.example.kmc19.shelterfinder;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class LoginScreen extends AppCompatActivity {
     EditText emailEt, passwordEt;
@@ -20,9 +17,10 @@ public class LoginScreen extends AppCompatActivity {
         setContentView(R.layout.activity_login_screen);
         Button loginButton = (Button) findViewById(R.id.login_button);
         Button guestButton = (Button) findViewById(R.id.guest_button);
+        Button cancelButton = findViewById(R.id.login_cancel_button);
         emailEt = (EditText) findViewById(R.id.id_inputfield);
         passwordEt = (EditText) findViewById(R.id.password_inputfield);
-        incorrectLogin = (TextView) findViewById(R.id.incorrectText);
+        incorrectLogin = (TextView) findViewById(R.id.login_incorrect_creds);
 /**
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +42,15 @@ public class LoginScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), ShelterList.class);
+                finish();
+                startActivity(intent);
+            }
+        });
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), HomeScreen.class);
                 finish();
                 startActivity(intent);
             }
