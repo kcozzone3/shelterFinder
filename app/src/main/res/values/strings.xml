@@ -18,4 +18,6 @@
     <string name="name_error_message">Please enter a first and last name.</string>
     <string name="logout_text">Logout</string>
     <string name="hello_user">Hello user!</string>
+    <string name="title_activity_detailed_info">DetailedInfo</string>
+    <string name="back_text">Back</string>
 </resources>

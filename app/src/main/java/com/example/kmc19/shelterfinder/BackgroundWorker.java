@@ -25,7 +25,7 @@ import java.net.URLEncoder;
  * Created by Jacksonfan on 2/18/18.
  */
 
-public class BackgroundWorker extends AsyncTask<String, String,String> {
+public class BackgroundWorker extends AsyncTask<String, String, String> {
 
     Activity context;
     AlertDialog alertDialog;
@@ -38,8 +38,8 @@ public class BackgroundWorker extends AsyncTask<String, String,String> {
     protected String doInBackground (String... params) {
         String type = params[0];
         Log.d("aaa", "type = " + type);
-        String login_url = "http://128.61.124.8:8888/login.php";
-        String register_url = "http://128.61.124.8:8888/register.php";
+        String login_url = "http://128.61.112.83:8888/login.php";
+        String register_url = "http://128.61.112.83:8888/register.php";
         if (type.equals("login")) {
             Log.d("aaa", "got login");
             try {
@@ -124,9 +124,8 @@ public class BackgroundWorker extends AsyncTask<String, String,String> {
     @Override
     protected void onPostExecute(String result) {
         alertDialog.setMessage(result);
-        if ( result.equals("login success")) {
+        if (result.equals("login success")) {
             Intent intent = new Intent(context.getBaseContext(), ShelterList.class);
-            //finish();
             context.startActivity(intent);
         } else if (result.equals("Register Successful")) {
             alertDialog.show();
@@ -134,7 +133,7 @@ public class BackgroundWorker extends AsyncTask<String, String,String> {
             context.startActivity(intent);
         }
         else {
-            //((LoginScreen)context).setIncorrectLogin();
+            ((LoginScreen)context).setIncorrectLogin();
             alertDialog.show();
         }
     }

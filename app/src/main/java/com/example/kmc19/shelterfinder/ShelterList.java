@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -28,10 +29,18 @@ public class ShelterList extends AppCompatActivity {
         shelterView = findViewById(R.id.shelter_list_view);
         shelterList = new ArrayList<>();
         readShelterdata();
-        ArrayAdapter<ShelterInfo> arrayAdapter = new ArrayAdapter<ShelterInfo>(this,
+        final ArrayAdapter<ShelterInfo> arrayAdapter = new ArrayAdapter<ShelterInfo>(this,
                 android.R.layout.simple_list_item_1, shelterList);
         shelterView.setAdapter(arrayAdapter);
-        Button logoutButton = (Button) findViewById(R.id.logout_button);
+        shelterView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getBaseContext(), DetailedInfo.class);
+                intent.putExtra("shelterInfo", shelterList.get(position));
+                startActivity(intent);
+            }
+        });
+        Button logoutButton = findViewById(R.id.logout_button);
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +72,37 @@ public class ShelterList extends AppCompatActivity {
                 }else{
                     shelterInfo.setCapacity(tokens[2]);
                 }
+                shelterInfo.setRestrictions(tokens[3]);
+                shelterInfo.setLongitude(tokens[4]);
+                shelterInfo.setLatitude(tokens[5]);
+                String stringBuffer = "";
+                int n = 6;
+                for (int i = 0; i < 2; i++) {
+                    if (tokens[n].charAt(0) == '\"') {
+                        boolean endOfBuffer = false;
+                        while (!endOfBuffer) {
+                            if (tokens[n].charAt(tokens[n].length() - 1) == '\"') {
+                                tokens[n] = tokens[n].substring(0, tokens[n].length() - 1);
+                                stringBuffer += tokens[n];
+                                endOfBuffer = true;
+                            } else {
+                                stringBuffer += tokens[n].substring(1) + ", ";
+                            }
+                            n++;
+                        }
+                    } else {
+                        stringBuffer += tokens[n];
+                        n++;
+                    }
+                    if (i == 0) {
+                        shelterInfo.setAddress(stringBuffer);
+                    } else {
+                        shelterInfo.setSpecialNotes(stringBuffer);
+                    }
+                    stringBuffer = "";
+                }
+                shelterInfo.setPhone(tokens[n]);
+                System.out.println("Success");
                 shelterList.add(shelterInfo);
 
                 Log.d("ShelterList", "Just created" + shelterInfo);
