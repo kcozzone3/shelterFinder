@@ -23,23 +23,7 @@ public class LoginScreen extends AppCompatActivity {
         emailEt = (EditText) findViewById(R.id.id_inputfield);
         passwordEt = (EditText) findViewById(R.id.password_inputfield);
         incorrectLogin = (TextView) findViewById(R.id.incorrectText);
-/**
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String username = usernameEt.getText().toString();
-                String password = passwordEt.getText().toString();
-                String type = "login";
-                if (username.equals("user") && password.equals("pass")) {
-                    Intent intent = new Intent(getBaseContext(), ShelterList.class);
-                    finish();
-                    startActivity(intent);
-                } else {
-                    incorrectLogin.setVisibility(View.VISIBLE);
-                }
 
-            }
-        });**/
         guestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

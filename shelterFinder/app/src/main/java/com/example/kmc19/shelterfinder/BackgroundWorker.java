@@ -37,8 +37,8 @@ public class BackgroundWorker extends AsyncTask<String, String,String> {
 
     protected String doInBackground (String... params) {
         String type = params[0];
-        String login_url = "http://128.61.14.206:8888/login.php";
-        String register_url = "http://128.61.14.206:8888/register.php";
+        String login_url = "http://192.168.1.79:8888/login.php";
+        String register_url = "http://192.168.1.79:8888/register.php";
         if (type.equals("login")) {
             try {
                 String email = params[1];
