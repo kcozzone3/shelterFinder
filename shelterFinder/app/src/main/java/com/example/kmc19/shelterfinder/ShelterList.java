@@ -1,78 +1,94 @@
 package com.example.kmc19.shelterfinder;
 
-import android.content.Intent;
-import android.renderscript.ScriptGroup;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.charset.Charset;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ShelterList extends AppCompatActivity {
-    private ListView shelterView;
-    private List<ShelterInfo> shelterList = new ArrayList<>();
+    private List<ShelterInfo> shelterInfoList = new ArrayList<>();
+    ListView listView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shelter_list);
-        shelterView = findViewById(R.id.shelter_list_view);
-        shelterList = new ArrayList<>();
-        readShelterdata();
-        ArrayAdapter<ShelterInfo> arrayAdapter = new ArrayAdapter<ShelterInfo>(this,
-                android.R.layout.simple_list_item_1, shelterList);
-        shelterView.setAdapter(arrayAdapter);
-        Button logoutButton = (Button) findViewById(R.id.logout_button);
-        logoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getBaseContext(), HomeScreen.class);
-                finish();
-                startActivity(intent);
-            }
-        });
 
+        listView = (ListView) findViewById(R.id.shelter_list_view);
+        getJSON("http://192.168.1.79:8888/retrieve_data.php");
     }
-    private void readShelterdata() {
-        InputStream is = getResources().openRawResource(R.raw.shelter);
-        BufferedReader reader = new BufferedReader(
-                new InputStreamReader(is, Charset.forName("UTF-8"))
-        );
-
-        String line ="";
-        try {
-            //step over headers
-            reader.readLine();
-            while((line = reader.readLine()) != null) {
-                //Split by ","
-                String[] tokens = line.split(",");
-                //Read data
-                ShelterInfo shelterInfo= new ShelterInfo();
-                shelterInfo.setShelterName(tokens[1]);
-                if(tokens[2].equals("")){
-                    shelterInfo.setCapacity("N/A");
-                }else{
-                    shelterInfo.setCapacity(tokens[2]);
-                }
-                shelterList.add(shelterInfo);
-
-                Log.d("ShelterList", "Just created" + shelterInfo);
 
 
+    private void getJSON(final String urlWebService) {
+
+        class GetJSON extends AsyncTask<Void, Void, String> {
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
             }
-        } catch (IOException e) {
-            Log.wtf("ShelterList", "Error reading shelter.csv" + line, e);
-            e.printStackTrace();
-        }
 
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+                try {
+                    loadIntoListView(s);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                try {
+                    URL url = new URL(urlWebService);
+                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                    StringBuilder sb = new StringBuilder();
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                    String json;
+                    while ((json = bufferedReader.readLine()) != null) {
+                        sb.append(json + "\n");
+                    }
+                    return sb.toString().trim();
+                } catch (Exception e) {
+                    return null;
+                }
+            }
+        }
+        GetJSON getJSON = new GetJSON();
+        getJSON.execute();
+    }
+
+    private void loadIntoListView(String json) throws JSONException {
+        JSONArray jsonArray = new JSONArray(json);
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject obj = jsonArray.getJSONObject(i);
+            ShelterInfo shelterInfo = new ShelterInfo();
+            shelterInfo.setShelterName(obj.getString("shelter_name"));
+            if(obj.getString("capacity").equals("")){
+                shelterInfo.setCapacity("N/A");
+            }else{
+                shelterInfo.setCapacity(obj.getString("capacity"));
+            }
+            shelterInfoList.add(shelterInfo);
+
+        }
+        ArrayAdapter<ShelterInfo> arrayAdapter = new ArrayAdapter<ShelterInfo>(this, android.R.layout.simple_list_item_1, shelterInfoList);
+        listView.setAdapter(arrayAdapter);
     }
 }

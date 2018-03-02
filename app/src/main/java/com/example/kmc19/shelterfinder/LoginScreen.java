@@ -9,39 +9,30 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class LoginScreen extends AppCompatActivity {
-
+    EditText emailEt, passwordEt;
+    TextView incorrectLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
-
         Button loginButton = findViewById(R.id.login_button);
         Button guestButton = findViewById(R.id.guest_button);
-        Button cancelButton = findViewById(R.id.cancel_button);
-
-        final TextView incorrectLogin = findViewById(R.id.incorrectText);
-        final EditText username = findViewById(R.id.id_inputfield);
-        final EditText password = findViewById(R.id.password_inputfield);
-
-        final Model_UserList userList = new Model_UserList();
+        Button cancelButton = findViewById(R.id.login_cancel_button);
+        emailEt = findViewById(R.id.id_inputfield);
+        passwordEt = findViewById(R.id.password_inputfield);
+        incorrectLogin = findViewById(R.id.login_incorrect_creds);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String id = username.getText().toString();
-                String pass = password.getText().toString();
-                Model_User temp = new Model_User(id, "temp", pass, false);
-                if (userList.loginVerify(temp)) {
-                    Intent intent = new Intent(getBaseContext(), ShelterList.class);
-                    finish();
-                    startActivity(intent);
-                } else {
-                    incorrectLogin.setVisibility(View.VISIBLE);
-                }
-
+                OnLogin(view);
             }
         });
 
+        /**
+         * When user taps proceed as guest button, activity finishes and switches to ShelterList
+         * View with the permissions of user type Guest.
+         */
         guestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,14 +42,28 @@ public class LoginScreen extends AppCompatActivity {
             }
         });
 
+        /**
+         * On click, activity finishes and user is sent back to the home screen.
+         */
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), HomeScreen.class);
                 finish();
                 startActivity(intent);
             }
         });
+    }
 
+    public void OnLogin(View view){
+        String email = emailEt.getText().toString();
+        String password = passwordEt.getText().toString();
+        String type = "login";
+        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+        backgroundWorker.execute(type, email, password);
+
+    }
+    public void setIncorrectLogin(){
+        incorrectLogin.setVisibility(View.VISIBLE);
     }
 }

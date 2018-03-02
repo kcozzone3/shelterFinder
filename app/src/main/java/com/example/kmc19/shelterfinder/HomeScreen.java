@@ -13,8 +13,12 @@ public class HomeScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
-        Button login_button = (Button) findViewById(R.id.login_button);
-        Button registration_button = (Button) findViewById(R.id.register_button);
+        Button login_button = findViewById(R.id.login_button);
+        Button registration_button = findViewById(R.id.register_button);
+
+        /**
+         * On click, activity ends and view changes to login screen.
+         */
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -23,6 +27,10 @@ public class HomeScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        /**
+         * On click, activity ends and view changes to registration screen.
+         */
         registration_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

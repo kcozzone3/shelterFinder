@@ -2,8 +2,12 @@ package com.example.kmc19.shelterfinder;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.AsyncTaskLoader;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.util.Log;
+import android.view.View;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -21,7 +25,7 @@ import java.net.URLEncoder;
  * Created by Jacksonfan on 2/18/18.
  */
 
-public class BackgroundWorker extends AsyncTask<String, String,String> {
+public class BackgroundWorker extends AsyncTask<String, String, String> {
 
     Activity context;
     AlertDialog alertDialog;
@@ -33,9 +37,11 @@ public class BackgroundWorker extends AsyncTask<String, String,String> {
 
     protected String doInBackground (String... params) {
         String type = params[0];
-        String login_url = "http://192.168.1.79:8888/login.php";
-        String register_url = "http://192.168.1.79:8888/register.php";
+        Log.d("aaa", "type = " + type);
+        String login_url = "http://128.61.112.83:8888/login.php";
+        String register_url = "http://128.61.112.83:8888/register.php";
         if (type.equals("login")) {
+            Log.d("aaa", "got login");
             try {
                 String email = params[1];
                 String password = params[2];
@@ -118,9 +124,8 @@ public class BackgroundWorker extends AsyncTask<String, String,String> {
     @Override
     protected void onPostExecute(String result) {
         alertDialog.setMessage(result);
-        if ( result.equals("login success")) {
+        if (result.equals("login success")) {
             Intent intent = new Intent(context.getBaseContext(), ShelterList.class);
-            //finish();
             context.startActivity(intent);
         } else if (result.equals("Register Successful")) {
             alertDialog.show();
@@ -128,7 +133,7 @@ public class BackgroundWorker extends AsyncTask<String, String,String> {
             context.startActivity(intent);
         }
         else {
-            //((LoginScreen)context).setIncorrectLogin();
+            ((LoginScreen)context).setIncorrectLogin();
             alertDialog.show();
         }
     }
