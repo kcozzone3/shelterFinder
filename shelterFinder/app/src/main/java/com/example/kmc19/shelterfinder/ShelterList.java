@@ -7,7 +7,6 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -65,7 +64,6 @@ public class ShelterList extends AppCompatActivity {
                     while ((json = bufferedReader.readLine()) != null) {
                         sb.append(json + "\n");
                     }
-                    Log.d("aaa", sb.toString());
                     return sb.toString().trim();
                 } catch (Exception e) {
                     return null;
