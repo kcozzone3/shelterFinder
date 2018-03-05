@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Dijkstra\'s Path</string>
+    <string name="welcome_screen_app_name">Dijkstra s Path</string>
+    <string name="user_id_or_email_prompt">Email Address</string>
+    <string name="password_prompt">Password</string>
+    <string name="invalid_credentials_message">This login attempt is invalid. Please enter a valid email and password.</string>
+    <string name="login_button_text">Login</string>
+    <string name="guest_button_text">Proceed as Guest</string>
+    <string name="low_poly_triangle_background_desc">A low poly blue triangle background</string>
+    <string name="welcome_screen_title">Welcome To</string>
+    <string name="welcome_screen_register_text">Register</string>
+    <string name="location_marker_desc">A location marker used in our title</string>
+    <string name="user_id_prompt">Please enter a valid email address</string>
+    <string name="valid_email_prompt">Must enter a valid email address.</string>
+    <string name="valid_password_prompt">Please enter a password</string>
+    <string name="registration_name_prompt">Please enter your full name</string>
+    <string name="password_error_message">Password must be at least 8 characters long and contain both letters and numbers.</string>
+    <string name="name_error_message">Please enter a first and last name.</string>
+    <string name="logout_text">Logout</string>
+    <string name="hello_user">Hello user!</string>
+</resources>
