@@ -20,4 +20,14 @@
     <string name="hello_user">Hello user!</string>
     <string name="title_activity_detailed_info">DetailedInfo</string>
     <string name="back_text">Back</string>
+    <string name="search_name_prompt">Search By Name :</string>
+    <string name="search_gender_prompt">Gender Restriction :</string>
+    <string name="search_male_box">Male</string>
+    <string name="search_female_box">Female</string>
+    <string name="search_age_range_prompt">Age Restrictions :</string>
+    <string name="search_families_newborns_box">Families with Newborns</string>
+    <string name="search_children_box">Children</string>
+    <string name="search_young_adults_box">Young Adults</string>
+    <string name="search_anyone_box">Anyone</string>
+    <string name="shelter_list_clear_search">Clear\nSearch</string>
 </resources>

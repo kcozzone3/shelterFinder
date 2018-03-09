@@ -9,6 +9,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,24 +24,52 @@ import java.util.List;
 
 public class ShelterList extends AppCompatActivity {
     private List<ShelterInfo> shelterList = new ArrayList<>();
+    private List<ShelterInfo> filteredList = new ArrayList<>();
+    ArrayAdapter<ShelterInfo> arrayAdapter;
     ListView shelterView;
+    boolean filtered;
+
+    public ShelterList getThis() {
+        return this;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shelter_list);
-
         shelterView = findViewById(R.id.shelter_list_view);
-        getJSON("http://128.61.112.83:8888/retrieve_data.php");
+        getJSON("http://128.61.119.185:8888/retrieve_data.php");
         shelterView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getBaseContext(), DetailedInfo.class);
-                intent.putExtra("shelterInfo", shelterList.get(position));
+                if (filtered) {
+                    intent.putExtra("shelterInfo", filteredList.get(position));
+                } else {
+                    intent.putExtra("shelterInfo", shelterList.get(position));
+                }
                 startActivity(intent);
             }
         });
         Button logoutButton = findViewById(R.id.logout_button);
+        Button searchButton = findViewById(R.id.shelter_list_search_button);
+        Button clearButton = findViewById(R.id.shelter_list_clear_button);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), SearchScreen.class);
+                intent.putParcelableArrayListExtra("shelterList", (ArrayList<ShelterInfo>) shelterList);
+                startActivityForResult(intent, 1);
+            }
+        });
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                arrayAdapter = new ArrayAdapter<>(getThis(), android.R.layout.simple_list_item_1, shelterList);
+                shelterView.setAdapter(arrayAdapter);
+                arrayAdapter.notifyDataSetChanged();
+            }
+        });
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,6 +80,22 @@ public class ShelterList extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                if (data.hasExtra("filteredShelters")) {
+                    filtered = true;
+                    filteredList = data.getParcelableArrayListExtra("filteredShelters");
+                    arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, filteredList);
+                    shelterView.setAdapter(arrayAdapter);
+                    arrayAdapter.notifyDataSetChanged();
+                }
+            } else {
+                filtered = false;
+            }
+        }
+    }
 
     private void getJSON(final String urlWebService) {
 
@@ -111,9 +157,8 @@ public class ShelterList extends AppCompatActivity {
             shelterInfo.setSpecialNotes(obj.getString("special_notes"));
             shelterInfo.setPhone(obj.getString("phone_number"));
             shelterList.add(shelterInfo);
-
         }
-        ArrayAdapter<ShelterInfo> arrayAdapter = new ArrayAdapter<ShelterInfo>(this, android.R.layout.simple_list_item_1, shelterList);
+        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, shelterList);
         shelterView.setAdapter(arrayAdapter);
     }
 }
