@@ -20,12 +20,16 @@ public class SearchScreen extends AppCompatActivity{
     CheckBox male, female, famNewborn, children, youngAdult, anyone;
     EditText shelter;
     String age, gender, shelterName;
+    String email;
     ArrayList<ShelterInfo> shelterList;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter_screen);
-        shelterList = getIntent().getParcelableArrayListExtra("shelterList");
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        shelterList = extras.getParcelableArrayList("shelterList");
+        email = extras.getString("email");
         Button searchButton = findViewById(R.id.search_search_button);
         Button cancelButton = findViewById(R.id.search_cancel_button);
         shelter = findViewById(R.id.search_name_field);
@@ -116,6 +120,8 @@ public class SearchScreen extends AppCompatActivity{
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), ShelterList.class);
+                intent.putExtra("email",email);
                 finish();
             }
         });

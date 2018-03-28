@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -28,37 +29,52 @@ public class ShelterList extends AppCompatActivity {
     ArrayAdapter<ShelterInfo> arrayAdapter;
     ListView shelterView;
     boolean filtered;
+    public String email;
 
     public ShelterList getThis() {
         return this;
     }
-
+    //public String getEmail() { return email; }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shelter_list);
         shelterView = findViewById(R.id.shelter_list_view);
-        getJSON("http://128.61.119.185:8888/retrieve_data.php");
+        email = getIntent().getStringExtra("email");
+        getJSON("http://128.61.112.153:8888/retrieve_data.php");
         shelterView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getBaseContext(), DetailedInfo.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("email", email);
                 if (filtered) {
-                    intent.putExtra("shelterInfo", filteredList.get(position));
+                    bundle.putParcelable("shelterInfo",filteredList.get(position));
+                   // intent.putExtra("shelterInfo", filteredList.get(position));
+                    intent.putExtras(bundle);
                 } else {
-                    intent.putExtra("shelterInfo", shelterList.get(position));
+                    bundle.putParcelable("shelterInfo",shelterList.get(position));
+                    //intent.putExtra("shelterInfo", shelterList.get(position));
+                    intent.putExtras(bundle);
                 }
+
                 startActivity(intent);
             }
         });
         Button logoutButton = findViewById(R.id.logout_button);
         Button searchButton = findViewById(R.id.shelter_list_search_button);
         Button clearButton = findViewById(R.id.shelter_list_clear_button);
+        Button cancelButton = findViewById(R.id.cancel_reservation);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("sss", email);
                 Intent intent = new Intent(getBaseContext(), SearchScreen.class);
-                intent.putParcelableArrayListExtra("shelterList", (ArrayList<ShelterInfo>) shelterList);
+                //intent.putExtra("email", email);
+                Bundle extras = new Bundle();
+                extras.putParcelableArrayList("shelterList",  (ArrayList<ShelterInfo>) shelterList);
+                extras.putString("email", email);
+                intent.putExtras(extras);
                 startActivityForResult(intent, 1);
             }
         });
@@ -79,6 +95,12 @@ public class ShelterList extends AppCompatActivity {
             }
         });
     }
+
+    public void OnCancellation(View view) {
+        BackgroundCancel backgroundCancel = new BackgroundCancel(this);
+        backgroundCancel.execute(email);
+    }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

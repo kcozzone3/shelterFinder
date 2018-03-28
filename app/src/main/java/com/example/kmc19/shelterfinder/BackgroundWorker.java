@@ -26,24 +26,23 @@ import java.net.URLEncoder;
  */
 
 public class BackgroundWorker extends AsyncTask<String, String, String> {
-
+    public String uniqueEmail = "";
     Activity context;
     AlertDialog alertDialog;
     BackgroundWorker(Activity ctx) {
         context = ctx;
     }
-
     @Override
 
     protected String doInBackground (String... params) {
         String type = params[0];
-        Log.d("aaa", "type = " + type);
-        String login_url = "http://128.61.119.185:8888/login.php";
-        String register_url = "http://128.61.119.185:8888/register.php";
+        String urlpath = "http://128.61.112.153:8888/";
+        String login_url = urlpath + "login.php";
+        String register_url = urlpath + "register.php";
         if (type.equals("login")) {
-            Log.d("aaa", "got login");
             try {
                 String email = params[1];
+                uniqueEmail = email;
                 String password = params[2];
                 URL url = new URL(login_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -112,7 +111,6 @@ public class BackgroundWorker extends AsyncTask<String, String, String> {
                 e.printStackTrace();
             }
         }
-
         return null;
     }
 
@@ -126,6 +124,7 @@ public class BackgroundWorker extends AsyncTask<String, String, String> {
         alertDialog.setMessage(result);
         if (result.equals("login success")) {
             Intent intent = new Intent(context.getBaseContext(), ShelterList.class);
+            intent.putExtra("email", uniqueEmail);
             context.startActivity(intent);
         } else if (result.equals("Register Successful")) {
             alertDialog.show();
