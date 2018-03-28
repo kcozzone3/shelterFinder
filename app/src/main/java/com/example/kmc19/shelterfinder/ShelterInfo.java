@@ -94,6 +94,10 @@ class ShelterInfo implements Parcelable {
     }
 
     public void setCapacity(String capacity) {
+        if (capacity == null) {
+            throw new IllegalArgumentException("The capacity cannot be null.");
+        }
+        
         if (capacity.equals("")) {
             this.capacity = "N/A";
         } else {
