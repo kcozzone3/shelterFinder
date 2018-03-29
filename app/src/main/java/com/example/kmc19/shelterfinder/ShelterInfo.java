@@ -3,9 +3,6 @@ package com.example.kmc19.shelterfinder;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by Jacksonfan on 2/24/18.
- */
 
 class ShelterInfo implements Parcelable {
     private String shelterName;

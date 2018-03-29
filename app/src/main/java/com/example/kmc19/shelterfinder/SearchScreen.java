@@ -12,9 +12,6 @@ import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Jacksonfan on 3/4/18.
- */
 
 public class SearchScreen extends AppCompatActivity{
     CheckBox male, female, famNewborn, children, youngAdult, anyone;

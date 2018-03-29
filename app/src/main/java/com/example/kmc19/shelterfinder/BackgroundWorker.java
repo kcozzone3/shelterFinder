@@ -21,9 +21,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
-/**
- * Created by Jacksonfan on 2/18/18.
- */
 
 public class BackgroundWorker extends AsyncTask<String, String, String> {
     public String uniqueEmail = "";
