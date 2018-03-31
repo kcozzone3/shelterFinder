@@ -42,5 +42,4 @@
     <string name="reserve_number_prompt">Reserving a bed for :</string>
     <string name="reserve_person_count">Person</string>
     <string name="reserve_confirm">Confirm Reservation</string>
-    <string name="shelter_list_cancel">Cancel\nReservation</string>
 </resources>

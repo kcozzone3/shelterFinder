@@ -61,9 +61,10 @@ public class DetailedInfo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), ShelterList.class);
-                intent.putExtra("email",email);
                 finish();
+                intent.putExtra("email",email);
             }
+
         });
     }
 }

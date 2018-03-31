@@ -2,12 +2,8 @@ package com.example.kmc19.shelterfinder;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.AsyncTaskLoader;
-import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.util.Log;
-import android.view.View;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -33,7 +29,7 @@ public class BackgroundWorker extends AsyncTask<String, String, String> {
 
     protected String doInBackground (String... params) {
         String type = params[0];
-        String urlpath = "http://128.61.112.153:8888/";
+        String urlpath = "http://128.61.114.19:8888/";
         String login_url = urlpath + "login.php";
         String register_url = urlpath + "register.php";
         if (type.equals("login")) {

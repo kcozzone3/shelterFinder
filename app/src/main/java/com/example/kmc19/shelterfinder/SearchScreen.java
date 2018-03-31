@@ -12,13 +12,12 @@ import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class SearchScreen extends AppCompatActivity{
     CheckBox male, female, famNewborn, children, youngAdult, anyone;
     EditText shelter;
     String age, gender, shelterName;
-    String email;
     ArrayList<ShelterInfo> shelterList;
+    String email;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,8 +117,8 @@ public class SearchScreen extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), ShelterList.class);
-                intent.putExtra("email",email);
                 finish();
+                intent.putExtra("email",email);
             }
         });
 

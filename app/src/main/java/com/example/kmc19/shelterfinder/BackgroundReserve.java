@@ -17,6 +17,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
+
 public class BackgroundReserve extends AsyncTask<String, String, String> {
 
     Activity context;
@@ -32,7 +33,7 @@ public class BackgroundReserve extends AsyncTask<String, String, String> {
         String sheltername = params[0];
         String reservation = params[1];
         email = params[2];
-        String urlpath = "http://128.61.112.153:8888/";
+        String urlpath = "http://128.61.114.19:8888/";
         String reserve_url = urlpath + "reserve.php";
         try {
             URL url = new URL(reserve_url);

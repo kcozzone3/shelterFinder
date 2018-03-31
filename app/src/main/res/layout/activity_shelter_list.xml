@@ -19,7 +19,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.501"
         app:srcCompat="@color/colorPrimary" />
 
     <Button
@@ -57,17 +56,15 @@
     <Button
         android:id="@+id/shelter_list_search_button"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/holo_orange_dark"
         android:text="@android:string/search_go"
         android:textSize="18sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toStartOf="@+id/shelter_list_clear_button"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -80,21 +77,17 @@
         android:background="@android:color/holo_red_dark"
         android:text="@string/shelter_list_clear_search"
         android:textStyle="italic"
-        app:layout_constraintEnd_toStartOf="@+id/cancel_reservation"
+        app:layout_constraintEnd_toStartOf="@+id/logout_button"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <Button
         android:id="@+id/cancel_reservation"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/holo_red_light"
-        android:onClick="OnCancellation"
-        android:text="@string/shelter_list_cancel"
-        app:layout_constraintEnd_toStartOf="@+id/logout_button"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Button"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="8dp"
+        android:onClick="OnCancellation"/>
 
 </android.support.constraint.ConstraintLayout>

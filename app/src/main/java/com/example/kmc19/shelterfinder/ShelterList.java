@@ -40,7 +40,7 @@ public class ShelterList extends AppCompatActivity {
         setContentView(R.layout.activity_shelter_list);
         shelterView = findViewById(R.id.shelter_list_view);
         email = getIntent().getStringExtra("email");
-        getJSON("http://128.61.112.153:8888/retrieve_data.php");
+        getJSON("http://128.61.114.19:8888/retrieve_data.php");
         shelterView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
