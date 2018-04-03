@@ -31,7 +31,7 @@ public class BackgroundCancel extends AsyncTask<String, String, String> {
 
     protected String doInBackground (String... params) {
         email = params[0];
-        String urlpath = "http://128.61.114.19:8888/";
+        String urlpath = "http://128.61.124.225:8888/";
         String reserve_url = urlpath + "cancel_reservation.php";
         try {
             URL url = new URL(reserve_url);

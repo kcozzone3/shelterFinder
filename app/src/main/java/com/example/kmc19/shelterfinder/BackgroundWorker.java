@@ -29,7 +29,7 @@ public class BackgroundWorker extends AsyncTask<String, String, String> {
 
     protected String doInBackground (String... params) {
         String type = params[0];
-        String urlpath = "http://128.61.114.19:8888/";
+        String urlpath = "http://128.61.124.225:8888/";
         String login_url = urlpath + "login.php";
         String register_url = urlpath + "register.php";
         if (type.equals("login")) {

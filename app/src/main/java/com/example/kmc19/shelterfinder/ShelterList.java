@@ -1,15 +1,18 @@
 package com.example.kmc19.shelterfinder;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,14 +36,19 @@ public class ShelterList extends AppCompatActivity {
     public ShelterList getThis() {
         return this;
     }
-    //public String getEmail() { return email; }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shelter_list);
         shelterView = findViewById(R.id.shelter_list_view);
         email = getIntent().getStringExtra("email");
-        getJSON("http://128.61.114.19:8888/retrieve_data.php");
+        getJSON("http://128.61.124.225:8888/retrieve_data.php");
+        Context context = getApplicationContext();
+        String text = "Swipe right to search\n\nSwipe left for map view";
+        int duration = Toast.LENGTH_LONG;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
         shelterView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -49,27 +57,44 @@ public class ShelterList extends AppCompatActivity {
                 bundle.putString("email", email);
                 if (filtered) {
                     bundle.putParcelable("shelterInfo",filteredList.get(position));
-                   // intent.putExtra("shelterInfo", filteredList.get(position));
                     intent.putExtras(bundle);
                 } else {
                     bundle.putParcelable("shelterInfo",shelterList.get(position));
-                    //intent.putExtra("shelterInfo", shelterList.get(position));
                     intent.putExtras(bundle);
                 }
-
                 startActivity(intent);
             }
         });
+        shelterView.setOnTouchListener(new OnSwipeListener(ShelterList.this) {
+            @Override
+            public void onSwipeRight() {
+                Log.d("sss", email);
+                Intent intent = new Intent(getBaseContext(), SearchScreen.class);
+                Bundle extras = new Bundle();
+                extras.putParcelableArrayList("shelterList",  (ArrayList<ShelterInfo>) shelterList);
+                extras.putString("email", email);
+                intent.putExtras(extras);
+                startActivityForResult(intent, 1);
+            }
+
+            @Override
+            public void onSwipeLeft() {
+                Intent intent = new Intent(getBaseContext(), SheltersMap.class);
+                intent.putParcelableArrayListExtra("shelterList",
+                        filteredList.isEmpty() ? (ArrayList<ShelterInfo>) shelterList :
+                                (ArrayList<ShelterInfo>) filteredList);
+                startActivity(intent);
+            }
+        });
+
         Button logoutButton = findViewById(R.id.logout_button);
         Button searchButton = findViewById(R.id.shelter_list_search_button);
         Button clearButton = findViewById(R.id.shelter_list_clear_button);
-        Button cancelButton = findViewById(R.id.cancel_reservation);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("sss", email);
                 Intent intent = new Intent(getBaseContext(), SearchScreen.class);
-                //intent.putExtra("email", email);
                 Bundle extras = new Bundle();
                 extras.putParcelableArrayList("shelterList",  (ArrayList<ShelterInfo>) shelterList);
                 extras.putString("email", email);
@@ -81,6 +106,7 @@ public class ShelterList extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 arrayAdapter = new ArrayAdapter<>(getThis(), android.R.layout.simple_list_item_1, shelterList);
+                filteredList = null;
                 shelterView.setAdapter(arrayAdapter);
                 arrayAdapter.notifyDataSetChanged();
             }
