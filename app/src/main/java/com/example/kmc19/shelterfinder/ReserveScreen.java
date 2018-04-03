@@ -8,8 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 public class ReserveScreen extends AppCompatActivity {
-    private Spinner reservation, mspin;
-    String sheltername;
+    private Spinner reservation;
+    private String sheltername;
 
     //Need to get Extra
     private String email, capacity;
@@ -22,16 +22,16 @@ public class ReserveScreen extends AppCompatActivity {
         Bundle extras = intent.getExtras();
 
         //Set number of beds one can reserve
-        mspin=(Spinner) findViewById(R.id.reserve_number_spinner);
+        Spinner mspin = findViewById(R.id.reserve_number_spinner);
 
         //get capcity
         capacity = extras.getString("capacity");
         int CAP = Integer.parseInt(capacity);
         Integer[] items = new Integer[CAP];
-        for (int a = 0; a< items.length; a++) {
-            items[a] = (a+1);
+        for (int a = 0; a < items.length; a++) {
+            items[a] = (a + 1);
         }
-        ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this,android.R.layout.simple_spinner_item, items);
+        ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, items);
         mspin.setAdapter(adapter);
 
         //get the number of beds reserved
@@ -42,7 +42,7 @@ public class ReserveScreen extends AppCompatActivity {
         sheltername = extras.getString("shelterName");
 
         //get email
-        email =extras.getString("email");
+        email = extras.getString("email");
     }
 
     public void OnReserve(View view) {
