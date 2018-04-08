@@ -15,12 +15,24 @@ public class LoginScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
-        Button loginButton = (Button) findViewById(R.id.login_button);
-        Button guestButton = (Button) findViewById(R.id.guest_button);
-        emailEt = (EditText) findViewById(R.id.id_inputfield);
-        passwordEt = (EditText) findViewById(R.id.password_inputfield);
-        incorrectLogin = (TextView) findViewById(R.id.incorrectText);
+        Button loginButton = findViewById(R.id.login_button);
+        Button guestButton = findViewById(R.id.guest_button);
+        Button cancelButton = findViewById(R.id.login_cancel_button);
+        emailEt = findViewById(R.id.id_inputfield);
+        passwordEt = findViewById(R.id.password_inputfield);
+        incorrectLogin = findViewById(R.id.login_incorrect_creds);
 
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                OnLogin(view);
+            }
+        });
+
+        /**
+         * When user taps proceed as guest button, activity finishes and switches to ShelterList
+         * View with the permissions of user type Guest.
+         */
         guestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -29,7 +41,20 @@ public class LoginScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        /**
+         * On click, activity finishes and user is sent back to the home screen.
+         */
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), HomeScreen.class);
+                finish();
+                startActivity(intent);
+            }
+        });
     }
+
     public void OnLogin(View view){
         String email = emailEt.getText().toString();
         String password = passwordEt.getText().toString();

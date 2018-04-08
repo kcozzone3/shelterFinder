@@ -17,10 +17,10 @@ public class RegistrationScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_screen);
-        editEmail = (EditText)findViewById(R.id.registration_email_box);
-        editUsername = (EditText)findViewById(R.id.registration_name_box);
-        editPassword = (EditText)findViewById(R.id.registration_password_box);
-        usertype = (Spinner)findViewById(R.id.user_type_spinner);
+        editEmail = findViewById(R.id.registration_email_box);
+        editUsername = findViewById(R.id.registration_name_box);
+        editPassword = findViewById(R.id.registration_password_box);
+        usertype = findViewById(R.id.user_type_spinner);
 
         ArrayAdapter<String> adapterCS = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, UserType.values());
         adapterCS.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

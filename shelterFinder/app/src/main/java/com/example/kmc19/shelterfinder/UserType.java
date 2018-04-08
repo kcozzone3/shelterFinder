@@ -1,8 +1,5 @@
 package com.example.kmc19.shelterfinder;
 
-/**
- * Created by Jacksonfan on 2/21/18.
- */
 
 public enum UserType {
     General ("GR"),
