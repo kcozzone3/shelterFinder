@@ -106,7 +106,7 @@ public class ShelterList extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 arrayAdapter = new ArrayAdapter<>(getThis(), android.R.layout.simple_list_item_1, shelterList);
-                filteredList = null;
+                filteredList = new ArrayList<>();
                 shelterView.setAdapter(arrayAdapter);
                 arrayAdapter.notifyDataSetChanged();
             }
