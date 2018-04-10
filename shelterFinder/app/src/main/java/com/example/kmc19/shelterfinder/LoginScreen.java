@@ -9,8 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class LoginScreen extends AppCompatActivity {
-    EditText emailEt, passwordEt;
-    TextView incorrectLogin;
+    private EditText emailEt, passwordEt;
+    private TextView incorrectLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +55,7 @@ public class LoginScreen extends AppCompatActivity {
         });
     }
 
-    public void OnLogin(View view){
+    private void OnLogin(View view){
         String email = emailEt.getText().toString();
         String password = passwordEt.getText().toString();
         String type = "login";

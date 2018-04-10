@@ -18,14 +18,14 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 
-public class BackgroundReserve extends AsyncTask<String, String, String> {
+class BackgroundReserve extends AsyncTask<String, String, String> {
 
-    Activity context;
-    AlertDialog alertDialog;
+    private Activity context;
+    private AlertDialog alertDialog;
+    private String email;
     BackgroundReserve(Activity ctx) {
             context = ctx;
         }
-    String email;
 
     @Override
 

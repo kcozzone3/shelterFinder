@@ -17,10 +17,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-public class BackgroundCheck extends AsyncTask<String, String, String> {
-    Activity context;
-    AlertDialog alertDialog;
-    String email, shelterName, numSpots;
+class BackgroundCheck extends AsyncTask<String, String, String> {
+    private Activity context;
+    private AlertDialog alertDialog;
+    private String email, shelterName, numSpots;
     BackgroundCheck(Activity ctx, String email, String shelterName, String numSpots) {
         context = ctx;
         this.email = email;

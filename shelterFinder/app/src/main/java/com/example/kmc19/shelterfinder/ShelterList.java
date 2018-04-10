@@ -28,12 +28,12 @@ import java.util.List;
 public class ShelterList extends AppCompatActivity {
     private List<ShelterInfo> shelterList = new ArrayList<>();
     private List<ShelterInfo> filteredList = new ArrayList<>();
-    ArrayAdapter<ShelterInfo> arrayAdapter;
-    ListView shelterView;
-    boolean filtered;
-    public String email;
+    private ArrayAdapter<ShelterInfo> arrayAdapter;
+    private ListView shelterView;
+    private boolean filtered;
+    private String email;
 
-    public ShelterList getThis() {
+    private ShelterList getThis() {
         return this;
     }
     @Override

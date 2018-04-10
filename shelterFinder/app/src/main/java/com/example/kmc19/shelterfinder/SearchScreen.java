@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchScreen extends AppCompatActivity{
-    CheckBox male, female, famNewborn, children, youngAdult, anyone;
-    EditText shelter;
-    String age, gender, shelterName;
-    ArrayList<ShelterInfo> shelterList;
-    String email;
+    private CheckBox male, female, famNewborn, children, youngAdult, anyone;
+    private EditText shelter;
+    private String age, gender, shelterName;
+    private ArrayList<ShelterInfo> shelterList;
+    private String email;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

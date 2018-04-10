@@ -2,7 +2,6 @@ package com.example.kmc19.shelterfinder;
 
 import android.content.Intent;
 import android.graphics.Point;
-import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.Display;

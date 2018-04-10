@@ -18,10 +18,10 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 
-public class BackgroundWorker extends AsyncTask<String, String, String> {
-    public String uniqueEmail = "";
-    Activity context;
-    AlertDialog alertDialog;
+class BackgroundWorker extends AsyncTask<String, String, String> {
+    private String uniqueEmail = "";
+    private Activity context;
+    private AlertDialog alertDialog;
     BackgroundWorker(Activity ctx) {
         context = ctx;
     }
@@ -134,9 +134,5 @@ public class BackgroundWorker extends AsyncTask<String, String, String> {
     protected void onProgressUpdate(String... values) {
         super.onProgressUpdate(values);
     }
-
-
-
-
 }
 

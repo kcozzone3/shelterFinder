@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 
 public class DetailedInfo extends AppCompatActivity {
-    TextView shelterName;
-    String email, capacity;
+    private TextView shelterName;
+    private String email, capacity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Need to get Extra

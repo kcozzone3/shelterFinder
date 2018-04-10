@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.Toast;
 
-public class OnSwipeListener implements OnTouchListener {
+class OnSwipeListener implements OnTouchListener {
 
     private final GestureDetector gestureDetector;
     private Context context;
@@ -66,15 +66,15 @@ public class OnSwipeListener implements OnTouchListener {
         }
     }
 
-    public void onSwipeRight() {
+    void onSwipeRight() {
     }
 
-    public void onSwipeLeft() {
+    void onSwipeLeft() {
     }
 
-    public void onSwipeBottom() {
+    private void onSwipeBottom() {
     }
 
-    public void onSwipeTop() {
+    private void onSwipeTop() {
     }
 }
