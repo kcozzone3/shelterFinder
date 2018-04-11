@@ -3,7 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+<<<<<<< HEAD
       <module fileurl="file://C:\Users\evanj\Documents\School\Semester 2\CS 2340\shelterFinder\app\app.iml" filepath="C:\Users\evanj\Documents\School\Semester 2\CS 2340\shelterFinder\app\app.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/jtds-1.3.1/jtds-1.3.1.iml" filepath="$PROJECT_DIR$/jtds-1.3.1/jtds-1.3.1.iml" />
+>>>>>>> 452d988eec339a2c2a2595da1287a3acf6fbeea3
       <module fileurl="file://$PROJECT_DIR$/shelterFinder.iml" filepath="$PROJECT_DIR$/shelterFinder.iml" />
       <module fileurl="file://C:\Users\evanj\Documents\School\Semester 2\CS 2340\shelterFinder\shelterFinder.iml" filepath="C:\Users\evanj\Documents\School\Semester 2\CS 2340\shelterFinder\shelterFinder.iml" />
     </modules>
