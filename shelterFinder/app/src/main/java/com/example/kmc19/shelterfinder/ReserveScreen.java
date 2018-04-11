@@ -14,7 +14,7 @@ import android.widget.Spinner;
  */
 public class ReserveScreen extends AppCompatActivity {
     private Spinner reservation;
-    private String sheltername;
+    private String shelterName;
 
     //Need to get Extra
     private String email, capacity;
@@ -27,9 +27,9 @@ public class ReserveScreen extends AppCompatActivity {
         Bundle extras = intent.getExtras();
 
         //Set number of beds one can reserve
-        Spinner mspin = findViewById(R.id.reserve_number_spinner);
+        Spinner bedSpin = findViewById(R.id.reserve_number_spinner);
 
-        //get capcity
+        //get capacity
         capacity = extras.getString("capacity");
         int CAP = Integer.parseInt(capacity);
         Integer[] items = new Integer[CAP];
@@ -37,14 +37,14 @@ public class ReserveScreen extends AppCompatActivity {
             items[a] = (a + 1);
         }
         ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
-        mspin.setAdapter(adapter);
+        bedSpin.setAdapter(adapter);
 
         //get the number of beds reserved
         reservation = findViewById(R.id.reserve_number_spinner);
 
-        //get the sheltername
+        //get the shelterName
 ;
-        sheltername = extras.getString("shelterName");
+        shelterName = extras.getString("shelterName");
 
         //get email
         email = extras.getString("email");
@@ -56,7 +56,7 @@ public class ReserveScreen extends AppCompatActivity {
      */
     public void OnReserve(View view) {
         String numSpots = reservation.getSelectedItem().toString();
-        BackgroundCheck backgroundCheck = new BackgroundCheck(this, email, sheltername, numSpots);
+        BackgroundCheck backgroundCheck = new BackgroundCheck(this, email, shelterName, numSpots);
         backgroundCheck.execute(email);
     }
 

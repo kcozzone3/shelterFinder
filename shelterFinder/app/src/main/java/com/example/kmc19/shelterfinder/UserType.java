@@ -16,10 +16,10 @@ public enum UserType {
     /**
      * Constructor for the enumeration
      *
-     * @param usertype   full name of the course
+     * @param userType   full name of the course
      */
-    UserType(String usertype){
-        userType = usertype;
+    UserType(String userType){
+        this.userType = userType;
     }
     /**
      *

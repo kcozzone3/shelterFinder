@@ -33,8 +33,8 @@ class BackgroundCheck extends AsyncTask<String, String, String> {
     @Override
 
     protected String doInBackground (String... params) {
-        String urlpath = "http://128.61.113.183:8888/";
-        String reserve_url = urlpath + "check_reservation.php";
+        String urlPath = "http://128.61.113.183:8888/";
+        String reserve_url = urlPath + "check_reservation.php";
         try {
             URL url = new URL(reserve_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();

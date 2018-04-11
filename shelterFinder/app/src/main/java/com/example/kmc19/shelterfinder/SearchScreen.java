@@ -12,6 +12,10 @@ import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The serach screen activity. Users can input certain criteria to filter the shelter list that is
+ * displayed to them in the shelter list activity.
+ */
 public class SearchScreen extends AppCompatActivity{
     private CheckBox male, female, famNewborn, children, youngAdult, anyone;
     private EditText shelter;
@@ -36,7 +40,6 @@ public class SearchScreen extends AppCompatActivity{
         children = findViewById(R.id.search_children_box);
         youngAdult = findViewById(R.id.search_young_adults_box);
         anyone = findViewById(R.id.search_anyone_box);
-        //getJSON("http://128.61.9.17:8888/search_match.php");
         age = "";
         gender = "";
 
@@ -124,6 +127,12 @@ public class SearchScreen extends AppCompatActivity{
         });
 
     }
+
+    /**
+     * Uses the user provided criteria to put a filtered ArrayList into a parcel. Finishes the
+     * activity and sends the user back to the shelter list activity.
+     * @param view the current view the user sees
+     */
     public void onSearch(View view) {
         shelterName = shelter.getText().toString().toLowerCase();
         List<ShelterInfo> filteredNameList = new ArrayList<>();

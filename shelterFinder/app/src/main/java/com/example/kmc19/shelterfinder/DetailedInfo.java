@@ -7,7 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-
+/**
+ * The detailed info activity. Users can view all the given information of a shelter and reserve if
+ * they are logged in normally.
+ */
 public class DetailedInfo extends AppCompatActivity {
     private TextView shelterName;
     private String email, capacity;
@@ -53,7 +56,6 @@ public class DetailedInfo extends AppCompatActivity {
                 extra.putString("capacity", capacity);
                 intent.putExtras(extra);
                 startActivity(intent);
-
             }
         });
 

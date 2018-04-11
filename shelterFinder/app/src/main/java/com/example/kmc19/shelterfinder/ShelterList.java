@@ -25,6 +25,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The shelter list activity. Displays all the shelters that are within the database to the user.
+ * If user has used the search screen activity, only shelters that follow the given criteria will
+ * be displayed.
+ */
 public class ShelterList extends AppCompatActivity {
     private List<ShelterInfo> shelterList = new ArrayList<>();
     private List<ShelterInfo> filteredList = new ArrayList<>();
@@ -121,6 +126,10 @@ public class ShelterList extends AppCompatActivity {
         });
     }
 
+    /**
+     * Cancels all reservations current user has in the database.
+     * @param view the current view that the user sees
+     */
     public void OnCancellation(View view) {
         BackgroundCancel backgroundCancel = new BackgroundCancel(this);
         backgroundCancel.execute(email);

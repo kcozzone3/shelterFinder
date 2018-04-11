@@ -30,11 +30,11 @@ class BackgroundReserve extends AsyncTask<String, String, String> {
     @Override
 
     protected String doInBackground (String... params) {
-        String sheltername = params[0];
+        String shelterName = params[0];
         String reservation = params[1];
         email = params[2];
-        String urlpath = "http://128.61.113.183:8888/";
-        String reserve_url = urlpath + "reserve.php";
+        String urlPath = "http://128.61.113.183:8888/";
+        String reserve_url = urlPath + "reserve.php";
         try {
             URL url = new URL(reserve_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -43,7 +43,7 @@ class BackgroundReserve extends AsyncTask<String, String, String> {
             httpURLConnection.setDoInput(true);
             OutputStream outputStream = httpURLConnection.getOutputStream();
             BufferedWriter bufferedWriter =  new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
-            String post_data = URLEncoder.encode("shelter_name", "UTF-8")+ "=" + URLEncoder.encode(sheltername, "UTF-8") + "&" +
+            String post_data = URLEncoder.encode("shelter_name", "UTF-8")+ "=" + URLEncoder.encode(shelterName, "UTF-8") + "&" +
                     URLEncoder.encode("reservation", "UTF-8")+ "=" + URLEncoder.encode(reservation, "UTF-8") + "&" +
                     URLEncoder.encode("email", "UTF-8") +  "=" +URLEncoder.encode(email, "UTF-8");
             bufferedWriter.write(post_data);
