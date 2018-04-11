@@ -10,8 +10,10 @@ import android.widget.Spinner;
 
 
 public class RegistrationScreen extends AppCompatActivity {
-    EditText editEmail, editUsername, editPassword;
-    private Spinner usertype;
+    private EditText editEmail;
+    private EditText editUsername;
+    private EditText editPassword;
+    private Spinner userType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +22,13 @@ public class RegistrationScreen extends AppCompatActivity {
         editEmail = findViewById(R.id.registration_email_box);
         editUsername = findViewById(R.id.registration_name_box);
         editPassword = findViewById(R.id.registration_password_box);
-        usertype = findViewById(R.id.user_type_spinner);
+        userType = findViewById(R.id.user_type_spinner);
 
-        ArrayAdapter<String> adapterCS = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, UserType.values());
+        ArrayAdapter<String> adapterCS =
+                new ArrayAdapter(this,
+                        android.R.layout.simple_spinner_dropdown_item, UserType.values());
         adapterCS.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        usertype.setAdapter(adapterCS);
+        userType.setAdapter(adapterCS);
 
 
     }
@@ -33,7 +37,7 @@ public class RegistrationScreen extends AppCompatActivity {
         String username = editUsername.getText().toString();
         String password = editPassword.getText().toString();
         String email = editEmail.getText().toString();
-        String userTypeStr = usertype.getSelectedItem().toString();
+        String userTypeStr = userType.getSelectedItem().toString();
         String type = "register";
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
         backgroundWorker.execute(type, email, username, password, userTypeStr);

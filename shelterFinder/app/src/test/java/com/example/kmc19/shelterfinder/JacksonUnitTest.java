@@ -17,7 +17,7 @@ public class JacksonUnitTest {
         assertEquals(4, 2 + 2);
     }
 
-    ShelterInfo shelter;
+    private ShelterInfo shelter;
 
     @Before
     public void setup() {

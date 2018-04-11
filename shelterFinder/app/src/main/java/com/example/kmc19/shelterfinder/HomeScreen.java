@@ -16,9 +16,8 @@ public class HomeScreen extends AppCompatActivity {
         Button login_button = findViewById(R.id.login_button);
         Button registration_button = findViewById(R.id.register_button);
 
-        /**
-         * On click, activity ends and view changes to login screen.
-         */
+
+         //On click, activity ends and view changes to login screen.
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -27,10 +26,8 @@ public class HomeScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+         // On click, activity ends and view changes to registration screen.
 
-        /**
-         * On click, activity ends and view changes to registration screen.
-         */
         registration_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

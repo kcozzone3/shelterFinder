@@ -2,7 +2,6 @@ package com.example.kmc19.shelterfinder;
 
 import android.content.Intent;
 import android.graphics.Point;
-import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.Display;
@@ -18,21 +17,19 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class SheltersMap extends FragmentActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
-    private ArrayList<ShelterInfo> shelterList;
+    private List<ShelterInfo> shelterList;
     private String email;
-    private Button exit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         email = getIntent().getStringExtra("email");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shelter_map);
-        exit = findViewById(R.id.map_exit);
+        Button exit = findViewById(R.id.map_exit);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -50,7 +47,7 @@ public class SheltersMap extends FragmentActivity implements OnMapReadyCallback 
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
+        GoogleMap mMap = googleMap;
         LatLngBounds.Builder boundBuilder = new LatLngBounds.Builder();
         LatLngBounds bound;
         Display display = getWindowManager().getDefaultDisplay();

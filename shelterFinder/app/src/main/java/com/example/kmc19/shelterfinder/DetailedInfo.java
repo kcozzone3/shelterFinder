@@ -9,12 +9,11 @@ import android.widget.TextView;
 
 
 public class DetailedInfo extends AppCompatActivity {
-    TextView shelterName;
-    String email, capacity;
+    private TextView shelterName;
+    private String email;
+    private String capacity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //Need to get Extra
-        //email = getIntent().getStringExtra("email");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_info);
         shelterName = findViewById(R.id.detail_shelter_name);
@@ -29,9 +28,14 @@ public class DetailedInfo extends AppCompatActivity {
         Button reserve = findViewById(R.id.detailed_info_reserve_button);
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-
+        if (bundle.getParcelable("shelterInfo") == null) {
+            throw new NullPointerException("shelter Info cannot be null");
+        }
         ShelterInfo info = bundle.getParcelable("shelterInfo");
         email = bundle.getString("email");
+        if (info.getShelterName() == null) {
+            throw new NullPointerException("Warning shelter name is null");
+        }
         shelterName.setText(info.getShelterName());
         capacity = info.getCapacity();
         shelterCapacity.setText("Current Capacity = " + info.getCapacity());

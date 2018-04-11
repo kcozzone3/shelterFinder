@@ -9,8 +9,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class LoginScreen extends AppCompatActivity {
-    EditText emailEt, passwordEt;
-    TextView incorrectLogin;
+    private EditText emailEt;
+    private EditText passwordEt;
+    private TextView incorrectLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,10 +30,10 @@ public class LoginScreen extends AppCompatActivity {
             }
         });
 
-        /**
-         * When user taps proceed as guest button, activity finishes and switches to ShelterList
-         * View with the permissions of user type Guest.
-         */
+
+         //When user taps proceed as guest button, activity finishes and switches to ShelterList
+         // View with the permissions of user type Guest.
+
         guestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,9 +43,9 @@ public class LoginScreen extends AppCompatActivity {
             }
         });
 
-        /**
-         * On click, activity finishes and user is sent back to the home screen.
-         */
+
+         //On click, activity finishes and user is sent back to the home screen.
+
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +56,7 @@ public class LoginScreen extends AppCompatActivity {
         });
     }
 
-    public void OnLogin(View view){
+    private void OnLogin(View view){
         String email = emailEt.getText().toString();
         String password = passwordEt.getText().toString();
         String type = "login";

@@ -13,17 +13,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchScreen extends AppCompatActivity{
-    CheckBox male, female, famNewborn, children, youngAdult, anyone;
-    EditText shelter;
-    String age, gender, shelterName;
-    ArrayList<ShelterInfo> shelterList;
-    String email;
-
+    private CheckBox male;
+    private CheckBox female;
+    private CheckBox famNewborn;
+    private CheckBox children;
+    private CheckBox youngAdult;
+    private CheckBox anyone;
+    private EditText shelter;
+    private String age;
+    private String gender;
+    private List<ShelterInfo> shelterList;
+    private String email;
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter_screen);
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
+        if (extras.getParcelableArrayList("shelterList") ==null) {
+            throw new NullPointerException("shelterList is null");
+        }
         shelterList = extras.getParcelableArrayList("shelterList");
         email = extras.getString("email");
         Button searchButton = findViewById(R.id.search_search_button);
@@ -123,8 +132,8 @@ public class SearchScreen extends AppCompatActivity{
         });
 
     }
-    public void onSearch(View view) {
-        shelterName = shelter.getText().toString().toLowerCase();
+    private void onSearch(View view) {
+        String shelterName = shelter.getText().toString().toLowerCase();
         List<ShelterInfo> filteredNameList = new ArrayList<>();
         List<ShelterInfo> filteredGenderList = new ArrayList<>();
         List<ShelterInfo> filteredAgeList = new ArrayList<>();
@@ -155,7 +164,9 @@ public class SearchScreen extends AppCompatActivity{
         } else {
             for (int i = 0; i < filteredAgeList.size(); i++) {
                 if(filteredAgeList.get(i).getRestrictions().toLowerCase().contains(gender)) {
-                    if (gender.equals("women") || (gender.equals("men") && !filteredAgeList.get(i).getRestrictions().toLowerCase().contains("women"))) {
+                    if (gender.equals("women") || (gender.equals("men")
+                            && !filteredAgeList.get(i).getRestrictions().toLowerCase()
+                            .contains("women"))) {
                         filteredGenderList.add(filteredAgeList.get(i));
                     }
                 }
@@ -163,8 +174,9 @@ public class SearchScreen extends AppCompatActivity{
         }
 
         Intent intent = new Intent();
-        if (filteredGenderList.size() != 0) {
-            intent.putParcelableArrayListExtra("filteredShelters", (ArrayList<ShelterInfo>) filteredGenderList);
+        if (!filteredGenderList.isEmpty()) {
+            intent.putParcelableArrayListExtra("filteredShelters",
+                    (ArrayList<ShelterInfo>) filteredGenderList);
             setResult(RESULT_OK, intent);
         }
         finish();
