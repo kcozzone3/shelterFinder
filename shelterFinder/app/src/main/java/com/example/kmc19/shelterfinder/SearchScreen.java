@@ -19,6 +19,7 @@ public class SearchScreen extends AppCompatActivity{
     private ArrayList<ShelterInfo> shelterList;
     private String email;
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter_screen);

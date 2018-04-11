@@ -7,6 +7,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+/**
+ * A representation of the inner logic of the reservation screen in the app. Creates a spinner that
+ * will only contain numerical values that are within the capacity of the shelter and pushes changes
+ * to the database.
+ */
 public class ReserveScreen extends AppCompatActivity {
     private Spinner reservation;
     private String sheltername;
@@ -31,7 +36,7 @@ public class ReserveScreen extends AppCompatActivity {
         for (int a = 0; a < items.length; a++) {
             items[a] = (a + 1);
         }
-        ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, items);
+        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
         mspin.setAdapter(adapter);
 
         //get the number of beds reserved
@@ -45,11 +50,20 @@ public class ReserveScreen extends AppCompatActivity {
         email = extras.getString("email");
     }
 
+    /**
+     * Attempts to reserve spots in the database on the click of the reserve button
+     * @param view the current view which the user sees
+     */
     public void OnReserve(View view) {
         String numSpots = reservation.getSelectedItem().toString();
         BackgroundCheck backgroundCheck = new BackgroundCheck(this, email, sheltername, numSpots);
         backgroundCheck.execute(email);
     }
+
+    /**
+     * Finishes the activity without reserving any spots.
+     * @param view the current view which the user sees
+     */
     public void OnCancel(View view) {
         Intent intent = new Intent(getBaseContext(), ShelterList.class);
         finish();
