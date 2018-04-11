@@ -106,7 +106,13 @@ class ShelterInfo implements Parcelable {
     }
 
     public void setLongitude(String longitude) {
-        this.longitude = Double.parseDouble(longitude);
+        if (longitude == null) {
+            throw new IllegalArgumentException("The longitude cannot be null.");
+        } else if (longitude == "") {
+            this.longitude = 0;
+        } else {
+            this.longitude = Double.parseDouble(longitude);
+        }
     }
 
     public void setLatitude(String latitude) {
