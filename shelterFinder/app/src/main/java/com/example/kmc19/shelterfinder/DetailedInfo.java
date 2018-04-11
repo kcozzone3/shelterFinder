@@ -12,6 +12,7 @@ public class DetailedInfo extends AppCompatActivity {
     private TextView shelterName;
     private String email;
     private String capacity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

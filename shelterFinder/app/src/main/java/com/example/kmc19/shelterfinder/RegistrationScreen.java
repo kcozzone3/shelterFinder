@@ -15,6 +15,7 @@ public class RegistrationScreen extends AppCompatActivity {
     private EditText editPassword;
     private Spinner userType;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

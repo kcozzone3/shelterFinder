@@ -17,11 +17,12 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 class BackgroundCheck extends AsyncTask<String, String, String>  {
-    private final Activity context;
+    private Activity context;
     private AlertDialog alertDialog;
     private final String email;
     private final String shelterName;
     private final String numSpots;
+
     BackgroundCheck(Activity ctx, String email, String shelterName, String numSpots) {
         context = ctx;
         this.email = email;
