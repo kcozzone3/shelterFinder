@@ -11,8 +11,9 @@ import android.widget.Toast;
 class OnSwipeListener implements OnTouchListener {
 
     private final GestureDetector gestureDetector;
-    private Context context;
+    private final Context context;
 
+    @Override
     public boolean onTouch(final View view, final MotionEvent motionEvent) {
         return gestureDetector.onTouchEvent(motionEvent);
     }
@@ -43,7 +44,8 @@ class OnSwipeListener implements OnTouchListener {
                 float diffX = e2.getRawX() - e1.getRawX();
                 float diffY = e2.getRawY() - e1.getRawY();
                 if ((Math.abs(diffX) - Math.abs(diffY)) > SWIPE_THRESHOLD) {
-                    if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
+                    if (Math.abs(diffX) > SWIPE_THRESHOLD
+                            && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
                         if (diffX > 0) {
                             onSwipeRight();
                         } else {
@@ -51,7 +53,8 @@ class OnSwipeListener implements OnTouchListener {
                         }
                         result = true;
                     }
-                } else if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
+                } else if (Math.abs(diffY) > SWIPE_THRESHOLD
+                        && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
                     if (diffY > 0) {
                         onSwipeBottom();
                     } else {

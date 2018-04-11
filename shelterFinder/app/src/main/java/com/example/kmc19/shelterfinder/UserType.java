@@ -7,18 +7,15 @@ public enum UserType {
     Shelter("Shelter");
 
     /** full representation of the ClassStanding String **/
-    private String userType;
-
-    /** full representation of the ClassStanding Code **/
-
+    private final String userType;
 
     /**
      * Constructor for the enumeration
      *
-     * @param usertype   full name of the course
+     * @param userType   full name of the userType
      */
-    UserType(String usertype){
-        userType = usertype;
+    UserType(String userType){
+        this.userType = userType;
     }
     /**
      *

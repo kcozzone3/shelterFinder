@@ -8,11 +8,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 public class ReserveScreen extends AppCompatActivity {
-    private Spinner reservation;
-    private String sheltername;
+    private Spinner mSpin;
+    private String shelterName;
 
     //Need to get Extra
-    private String email, capacity;
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,32 +22,35 @@ public class ReserveScreen extends AppCompatActivity {
         Bundle extras = intent.getExtras();
 
         //Set number of beds one can reserve
-        Spinner mspin = findViewById(R.id.reserve_number_spinner);
+        mSpin = findViewById(R.id.reserve_number_spinner);
 
-        //get capcity
-        capacity = extras.getString("capacity");
-        int CAP = Integer.parseInt(capacity);
+        //get Capacity
+        if(extras.getString("capacity")==null) {
+            throw new NullPointerException("capacity is null");
+        }
+        String Capacity = extras.getString("capacity");
+        int CAP = Integer.parseInt(Capacity);
         Integer[] items = new Integer[CAP];
         for (int a = 0; a < items.length; a++) {
             items[a] = (a + 1);
         }
-        ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, items);
-        mspin.setAdapter(adapter);
+        ArrayAdapter<Integer> adapter =
+                new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
+        mSpin.setAdapter(adapter);
 
         //get the number of beds reserved
-        reservation = findViewById(R.id.reserve_number_spinner);
 
-        //get the sheltername
-;
-        sheltername = extras.getString("shelterName");
+        //get the shelterName
+
+        shelterName = extras.getString("shelterName");
 
         //get email
         email = extras.getString("email");
     }
 
     public void OnReserve(View view) {
-        String numSpots = reservation.getSelectedItem().toString();
-        BackgroundCheck backgroundCheck = new BackgroundCheck(this, email, sheltername, numSpots);
+        String numSpots = mSpin.getSelectedItem().toString();
+        BackgroundCheck backgroundCheck = new BackgroundCheck(this, email, shelterName, numSpots);
         backgroundCheck.execute(email);
     }
     public void OnCancel(View view) {

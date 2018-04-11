@@ -12,7 +12,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.net.MalformedURLException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -20,7 +19,8 @@ import java.net.URLEncoder;
 
 class BackgroundWorker extends AsyncTask<String, String, String> {
     private String uniqueEmail = "";
-    private Activity context;
+    private final Activity context;
+
     private AlertDialog alertDialog;
     BackgroundWorker(Activity ctx) {
         context = ctx;
@@ -43,63 +43,72 @@ class BackgroundWorker extends AsyncTask<String, String, String> {
                 httpURLConnection.setDoOutput(true);
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
-                BufferedWriter bufferedWriter =  new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
-                String post_data = URLEncoder.encode("email", "UTF-8")+ "=" + URLEncoder.encode(email, "UTF-8") + "&" +
-                URLEncoder.encode("password", "UTF-8")+ "=" + URLEncoder.encode(password, "UTF-8");
+                BufferedWriter bufferedWriter =
+                        new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
+                String post_data =
+                        URLEncoder.encode("email", "UTF-8")+ "="
+                                + URLEncoder.encode(email, "UTF-8") + "&" +
+                URLEncoder.encode("password", "UTF-8")
+                                + "=" + URLEncoder.encode(password, "UTF-8");
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
                 outputStream.close();
                 InputStream inputStream = httpURLConnection.getInputStream();
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
+                BufferedReader bufferedReader =
+                        new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
                 String result = "";
-                String line = "";
-                while((line = bufferedReader.readLine()) != null) {
-                    result += line;
+                String line ;
+                while((bufferedReader.readLine()) != null) {
+                    line = bufferedReader.readLine();
+                    result = result + line;
                 }
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();
                 return result;
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
+            }  catch (IOException e) {
                 e.printStackTrace();
             }
-        }else if(type == "register") {
+        }else if(type.equals("register")) {
             try {
                 String email = params[1];
                 String username = params[2];
                 String password = params[3];
-                String usertype = params[4];
+                String userType = params[4];
                 URL url = new URL(register_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
-                BufferedWriter bufferedWriter =  new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
-                String post_data = URLEncoder.encode("email", "UTF-8")+ "=" + URLEncoder.encode(email, "UTF-8") + "&" +
-                        URLEncoder.encode("username", "UTF-8")+ "=" + URLEncoder.encode(username, "UTF-8") + "&" +
-                        URLEncoder.encode("password", "UTF-8")+ "=" + URLEncoder.encode(password, "UTF-8") + "&" +
-                        URLEncoder.encode("usertype", "UTF-8")+ "=" + URLEncoder.encode(usertype, "UTF-8");
+                BufferedWriter bufferedWriter =
+                        new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
+                String post_data = URLEncoder.encode("email", "UTF-8")
+                        + "=" + URLEncoder.encode(email, "UTF-8") + "&" +
+                        URLEncoder.encode("username", "UTF-8")+ "="
+                        + URLEncoder.encode(username, "UTF-8") + "&" +
+                        URLEncoder.encode("password", "UTF-8")+ "="
+                        + URLEncoder.encode(password, "UTF-8") + "&" +
+                        URLEncoder.encode("userType", "UTF-8")+ "="
+                        + URLEncoder.encode(userType, "UTF-8");
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
                 outputStream.close();
                 InputStream inputStream = httpURLConnection.getInputStream();
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
+                BufferedReader bufferedReader =
+                        new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
                 String result = "";
-                String line = "";
-                while((line = bufferedReader.readLine()) != null) {
-                    result += line;
+                String line ;
+                while((bufferedReader.readLine()) != null) {
+                    line = bufferedReader.readLine();
+                    result = result + line;
                 }
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();
                 return result;
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
