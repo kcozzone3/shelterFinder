@@ -1,0 +1,287 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:2:1-53:12
+MERGED from [com.android.support:design:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/105752a4cdde4740d5d3e46c8be005a1/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2eeea236c2980e14f3e7b126697e3f04/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/a0943fedc949c8dabde9afd96ffdcbd3/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-maps-12.0.1.aar/9e72d3917902ea88ed275e176a543bd3/AndroidManifest.xml:17:1-32:12
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1b4922b60c6704d16c3fe781f0eda435/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/c33daa04fde28aea3641803053f42a8b/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/6647f2771d461b88589d9d1fb1a701ea/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:transition:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/8e2926252b8e28211000b428a3c58bfa/AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-base:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-base-12.0.1.aar/160aa6f4e172a099a0f9ef105d3e9ca4/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-tasks-12.0.1.aar/11f3456419f0cf7a7056b7dc956f9de1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-basement-12.0.1.aar/9dbd58c4bad0552d6cd1a32a0b3c6a8f/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/1b1580d5c1ca6fe76198d800334c977a/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/a8050c7bc33b67683c2e7ecba709f1db/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/203bfb198bcc768b8af0f00d183e49a2/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3b912f8606de233ab83dc7b61d21ba9d/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/ba8b88e8c6c620e480fcb4a89532b94b/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/f9531e29cb3d80a70d0bdec908c12a20/AndroidManifest.xml:17:1-31:12
+MERGED from [com.google.android.gms:play-services-maps-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-maps-license-12.0.1.aar/2b612580e683888b0a00d24481331bf6/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-base-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-base-license-12.0.1.aar/fcd3d64816c9219ebcee8a4fb8c62b4e/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-basement-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-12.0.1.aar/621b13540d748cf04c3812e2c938643a/AndroidManifest.xml:17:1-24:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/85bb44c04050b8ec94661df7d5071310/AndroidManifest.xml:17:1-30:12
+MERGED from [com.google.android.gms:play-services-tasks-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-12.0.1.aar/88268b8c4b3ad012bf330e19fb808291/AndroidManifest.xml:17:1-24:12
+INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:2:1-53:12
+	package
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:3:5-46
+		INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:2:1-53:12
+		INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:2:1-53:12
+		INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:5:5-67
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-maps-12.0.1.aar/9e72d3917902ea88ed275e176a543bd3/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-maps-12.0.1.aar/9e72d3917902ea88ed275e176a543bd3/AndroidManifest.xml:24:5-67
+	android:name
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:6:5-79
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-maps-12.0.1.aar/9e72d3917902ea88ed275e176a543bd3/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-maps-12.0.1.aar/9e72d3917902ea88ed275e176a543bd3/AndroidManifest.xml:23:5-79
+	android:name
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:7:5-76
+	android:name
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:7:22-73
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:14:5-79
+	android:name
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:14:22-76
+application
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:16:5-51:19
+MERGED from [com.android.support:design:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/105752a4cdde4740d5d3e46c8be005a1/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:design:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/105752a4cdde4740d5d3e46c8be005a1/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2eeea236c2980e14f3e7b126697e3f04/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2eeea236c2980e14f3e7b126697e3f04/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/a0943fedc949c8dabde9afd96ffdcbd3/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/a0943fedc949c8dabde9afd96ffdcbd3/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-maps-12.0.1.aar/9e72d3917902ea88ed275e176a543bd3/AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-maps-12.0.1.aar/9e72d3917902ea88ed275e176a543bd3/AndroidManifest.xml:30:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1b4922b60c6704d16c3fe781f0eda435/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1b4922b60c6704d16c3fe781f0eda435/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/c33daa04fde28aea3641803053f42a8b/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/c33daa04fde28aea3641803053f42a8b/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/6647f2771d461b88589d9d1fb1a701ea/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/6647f2771d461b88589d9d1fb1a701ea/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/8e2926252b8e28211000b428a3c58bfa/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/8e2926252b8e28211000b428a3c58bfa/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-base:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-base-12.0.1.aar/160aa6f4e172a099a0f9ef105d3e9ca4/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-base-12.0.1.aar/160aa6f4e172a099a0f9ef105d3e9ca4/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-tasks-12.0.1.aar/11f3456419f0cf7a7056b7dc956f9de1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-tasks-12.0.1.aar/11f3456419f0cf7a7056b7dc956f9de1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-basement-12.0.1.aar/9dbd58c4bad0552d6cd1a32a0b3c6a8f/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-basement-12.0.1.aar/9dbd58c4bad0552d6cd1a32a0b3c6a8f/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/1b1580d5c1ca6fe76198d800334c977a/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/1b1580d5c1ca6fe76198d800334c977a/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/a8050c7bc33b67683c2e7ecba709f1db/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/a8050c7bc33b67683c2e7ecba709f1db/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/203bfb198bcc768b8af0f00d183e49a2/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/203bfb198bcc768b8af0f00d183e49a2/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3b912f8606de233ab83dc7b61d21ba9d/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3b912f8606de233ab83dc7b61d21ba9d/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/ba8b88e8c6c620e480fcb4a89532b94b/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/ba8b88e8c6c620e480fcb4a89532b94b/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/f9531e29cb3d80a70d0bdec908c12a20/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/f9531e29cb3d80a70d0bdec908c12a20/AndroidManifest.xml:25:5-29:19
+MERGED from [com.google.android.gms:play-services-maps-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-maps-license-12.0.1.aar/2b612580e683888b0a00d24481331bf6/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-maps-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-maps-license-12.0.1.aar/2b612580e683888b0a00d24481331bf6/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-base-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-base-license-12.0.1.aar/fcd3d64816c9219ebcee8a4fb8c62b4e/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-base-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-base-license-12.0.1.aar/fcd3d64816c9219ebcee8a4fb8c62b4e/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-12.0.1.aar/621b13540d748cf04c3812e2c938643a/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-12.0.1.aar/621b13540d748cf04c3812e2c938643a/AndroidManifest.xml:22:5-20
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/85bb44c04050b8ec94661df7d5071310/AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/85bb44c04050b8ec94661df7d5071310/AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.android.gms:play-services-tasks-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-12.0.1.aar/88268b8c4b3ad012bf330e19fb808291/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-12.0.1.aar/88268b8c4b3ad012bf330e19fb808291/AndroidManifest.xml:22:5-20
+	android:supportsRtl
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:21:9-35
+	android:label
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:19:9-41
+	android:roundIcon
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:20:9-54
+	android:icon
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:18:9-43
+	android:allowBackup
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:17:9-35
+	android:theme
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:22:9-40
+activity#com.example.kmc19.shelterfinder.HomeScreen
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:23:9-29:20
+	android:name
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:23:19-45
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:24:13-28:29
+action#android.intent.action.MAIN
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:25:17-69
+	android:name
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:25:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:27:17-77
+	android:name
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:27:27-74
+activity#com.example.kmc19.shelterfinder.LoginScreen
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:30:9-49
+	android:name
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:30:19-46
+activity#com.example.kmc19.shelterfinder.RegistrationScreen
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:31:9-56
+	android:name
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:31:19-53
+activity#com.example.kmc19.shelterfinder.ShelterList
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:32:9-49
+	android:name
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:32:19-46
+activity#com.example.kmc19.shelterfinder.DetailedInfo
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:33:9-50
+	android:name
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:33:19-47
+activity#com.example.kmc19.shelterfinder.SearchScreen
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:34:9-50
+	android:name
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:34:19-47
+activity#com.example.kmc19.shelterfinder.ReserveScreen
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:35:9-51
+	android:name
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:35:19-48
+meta-data#com.google.android.geo.API_KEY
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:44:9-46:55
+	android:value
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:46:13-52
+	android:name
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:45:13-58
+activity#com.example.kmc19.shelterfinder.SheltersMap
+ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:48:9-50:76
+	android:label
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:50:13-64
+	android:name
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml:49:13-40
+uses-sdk
+INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml
+INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:design:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/105752a4cdde4740d5d3e46c8be005a1/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:design:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/105752a4cdde4740d5d3e46c8be005a1/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2eeea236c2980e14f3e7b126697e3f04/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2eeea236c2980e14f3e7b126697e3f04/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/a0943fedc949c8dabde9afd96ffdcbd3/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/a0943fedc949c8dabde9afd96ffdcbd3/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-maps-12.0.1.aar/9e72d3917902ea88ed275e176a543bd3/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-maps-12.0.1.aar/9e72d3917902ea88ed275e176a543bd3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1b4922b60c6704d16c3fe781f0eda435/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1b4922b60c6704d16c3fe781f0eda435/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/c33daa04fde28aea3641803053f42a8b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/c33daa04fde28aea3641803053f42a8b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/6647f2771d461b88589d9d1fb1a701ea/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/6647f2771d461b88589d9d1fb1a701ea/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/8e2926252b8e28211000b428a3c58bfa/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/8e2926252b8e28211000b428a3c58bfa/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-base-12.0.1.aar/160aa6f4e172a099a0f9ef105d3e9ca4/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-base-12.0.1.aar/160aa6f4e172a099a0f9ef105d3e9ca4/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-tasks-12.0.1.aar/11f3456419f0cf7a7056b7dc956f9de1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-tasks-12.0.1.aar/11f3456419f0cf7a7056b7dc956f9de1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-basement-12.0.1.aar/9dbd58c4bad0552d6cd1a32a0b3c6a8f/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-basement-12.0.1.aar/9dbd58c4bad0552d6cd1a32a0b3c6a8f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/1b1580d5c1ca6fe76198d800334c977a/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/1b1580d5c1ca6fe76198d800334c977a/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/a8050c7bc33b67683c2e7ecba709f1db/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/a8050c7bc33b67683c2e7ecba709f1db/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/203bfb198bcc768b8af0f00d183e49a2/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/203bfb198bcc768b8af0f00d183e49a2/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3b912f8606de233ab83dc7b61d21ba9d/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3b912f8606de233ab83dc7b61d21ba9d/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/ba8b88e8c6c620e480fcb4a89532b94b/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/ba8b88e8c6c620e480fcb4a89532b94b/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/f9531e29cb3d80a70d0bdec908c12a20/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/f9531e29cb3d80a70d0bdec908c12a20/AndroidManifest.xml:21:5-23:58
+MERGED from [com.google.android.gms:play-services-maps-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-maps-license-12.0.1.aar/2b612580e683888b0a00d24481331bf6/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-maps-license-12.0.1.aar/2b612580e683888b0a00d24481331bf6/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-base-license-12.0.1.aar/fcd3d64816c9219ebcee8a4fb8c62b4e/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-base-license-12.0.1.aar/fcd3d64816c9219ebcee8a4fb8c62b4e/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-12.0.1.aar/621b13540d748cf04c3812e2c938643a/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-12.0.1.aar/621b13540d748cf04c3812e2c938643a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/85bb44c04050b8ec94661df7d5071310/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/85bb44c04050b8ec94661df7d5071310/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-tasks-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-12.0.1.aar/88268b8c4b3ad012bf330e19fb808291/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks-license:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-12.0.1.aar/88268b8c4b3ad012bf330e19fb808291/AndroidManifest.xml:20:5-44
+INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml
+INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/105752a4cdde4740d5d3e46c8be005a1/AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml
+		ADDED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/harrywang/Documents/_CS2340/shelterFinder/shelterFinder/app/src/main/AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/105752a4cdde4740d5d3e46c8be005a1/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2eeea236c2980e14f3e7b126697e3f04/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2eeea236c2980e14f3e7b126697e3f04/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1b4922b60c6704d16c3fe781f0eda435/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1b4922b60c6704d16c3fe781f0eda435/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/c33daa04fde28aea3641803053f42a8b/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/c33daa04fde28aea3641803053f42a8b/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/6647f2771d461b88589d9d1fb1a701ea/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/6647f2771d461b88589d9d1fb1a701ea/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/8e2926252b8e28211000b428a3c58bfa/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/8e2926252b8e28211000b428a3c58bfa/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/1b1580d5c1ca6fe76198d800334c977a/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/1b1580d5c1ca6fe76198d800334c977a/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/a8050c7bc33b67683c2e7ecba709f1db/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/a8050c7bc33b67683c2e7ecba709f1db/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/203bfb198bcc768b8af0f00d183e49a2/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/203bfb198bcc768b8af0f00d183e49a2/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3b912f8606de233ab83dc7b61d21ba9d/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3b912f8606de233ab83dc7b61d21ba9d/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/ba8b88e8c6c620e480fcb4a89532b94b/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/ba8b88e8c6c620e480fcb4a89532b94b/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/f9531e29cb3d80a70d0bdec908c12a20/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/f9531e29cb3d80a70d0bdec908c12a20/AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:design:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/105752a4cdde4740d5d3e46c8be005a1/AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:design:26.1.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/105752a4cdde4740d5d3e46c8be005a1/AndroidManifest.xml:27:13-51
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-maps-12.0.1.aar/9e72d3917902ea88ed275e176a543bd3/AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-maps-12.0.1.aar/9e72d3917902ea88ed275e176a543bd3/AndroidManifest.xml:27:9-41
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-maps-12.0.1.aar/9e72d3917902ea88ed275e176a543bd3/AndroidManifest.xml:28:9-32
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-base-12.0.1.aar/160aa6f4e172a099a0f9ef105d3e9ca4/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-base-12.0.1.aar/160aa6f4e172a099a0f9ef105d3e9ca4/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-base-12.0.1.aar/160aa6f4e172a099a0f9ef105d3e9ca4/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-base-12.0.1.aar/160aa6f4e172a099a0f9ef105d3e9ca4/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-basement-12.0.1.aar/9dbd58c4bad0552d6cd1a32a0b3c6a8f/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-basement-12.0.1.aar/9dbd58c4bad0552d6cd1a32a0b3c6a8f/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:12.0.1] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/play-services-basement-12.0.1.aar/9dbd58c4bad0552d6cd1a32a0b3c6a8f/AndroidManifest.xml:24:13-58
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/85bb44c04050b8ec94661df7d5071310/AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/85bb44c04050b8ec94661df7d5071310/AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /Users/harrywang/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/85bb44c04050b8ec94661df7d5071310/AndroidManifest.xml:26:13-58
