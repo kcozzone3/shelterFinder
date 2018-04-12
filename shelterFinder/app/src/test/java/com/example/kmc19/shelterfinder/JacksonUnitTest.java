@@ -17,7 +17,7 @@ public class JacksonUnitTest {
         assertEquals(4, 2 + 2);
     }
 
-    ShelterInfo shelter;
+    private ShelterInfo shelter;
 
     @Before
     public void setup() {
@@ -40,14 +40,14 @@ public class JacksonUnitTest {
     @Test
     public void testEmptyString() {
         shelter.setShelterName("");
-        Assert.assertTrue(shelter.getShelterName().equals("N/A"));
+        Assert.assertTrue(shelter.getShelterName().equals(""));
     }
 
     @Test
     public void testEmptyString2() {
         String str = "";
         shelter.setShelterName(str);
-        Assert.assertTrue(shelter.getShelterName().equals("N/A"));
+        Assert.assertTrue(shelter.getShelterName().equals(""));
     }
 
     @Test

@@ -25,7 +25,7 @@ class ShelterInfo implements Parcelable {
         phone = "";
     }
 
-    public ShelterInfo (Parcel in) {
+    private ShelterInfo (Parcel in) {
         shelterName = in.readString();
         capacity = in.readString();
         restrictions = in.readString();

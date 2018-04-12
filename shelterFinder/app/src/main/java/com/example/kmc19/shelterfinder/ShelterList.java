@@ -42,7 +42,7 @@ public class ShelterList extends AppCompatActivity {
         setContentView(R.layout.activity_shelter_list);
         shelterView = findViewById(R.id.shelter_list_view);
         email = getIntent().getStringExtra("email");
-        getJSON("http://128.61.113.183:8888/retrieve_data.php");
+        getJSON("http://128.61.10.116:8888/retrieve_data.php");
         Context context = getApplicationContext();
         String text = "Swipe right to search\n\nSwipe left for map view";
         int duration = Toast.LENGTH_LONG;
@@ -105,8 +105,9 @@ public class ShelterList extends AppCompatActivity {
         clearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                arrayAdapter = new ArrayAdapter<>(getThis(), android.R.layout.simple_list_item_1, shelterList);
-                filteredList = null;
+                arrayAdapter = new ArrayAdapter<>(getThis(), android.R.layout.simple_list_item_1,
+                        shelterList);
+                filteredList = new ArrayList<>();
                 shelterView.setAdapter(arrayAdapter);
                 arrayAdapter.notifyDataSetChanged();
             }
@@ -134,7 +135,8 @@ public class ShelterList extends AppCompatActivity {
                 if (data.hasExtra("filteredShelters")) {
                     filtered = true;
                     filteredList = data.getParcelableArrayListExtra("filteredShelters");
-                    arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, filteredList);
+                    arrayAdapter = new ArrayAdapter<>(this,
+                            android.R.layout.simple_list_item_1, filteredList);
                     shelterView.setAdapter(arrayAdapter);
                     arrayAdapter.notifyDataSetChanged();
                 }
@@ -171,7 +173,8 @@ public class ShelterList extends AppCompatActivity {
                     URL url = new URL(urlWebService);
                     HttpURLConnection con = (HttpURLConnection) url.openConnection();
                     StringBuilder sb = new StringBuilder();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                    BufferedReader bufferedReader =
+                            new BufferedReader(new InputStreamReader(con.getInputStream()));
                     String json;
                     while ((json = bufferedReader.readLine()) != null) {
                         sb.append(json + "\n");

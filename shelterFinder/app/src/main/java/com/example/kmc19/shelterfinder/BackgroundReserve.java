@@ -33,7 +33,7 @@ class BackgroundReserve extends AsyncTask<String, String, String> {
         String sheltername = params[0];
         String reservation = params[1];
         email = params[2];
-        String urlpath = "http://128.61.113.183:8888/";
+        String urlpath = "http://128.61.10.116:8888/";
         String reserve_url = urlpath + "reserve.php";
         try {
             URL url = new URL(reserve_url);
@@ -42,16 +42,21 @@ class BackgroundReserve extends AsyncTask<String, String, String> {
             httpURLConnection.setDoOutput(true);
             httpURLConnection.setDoInput(true);
             OutputStream outputStream = httpURLConnection.getOutputStream();
-            BufferedWriter bufferedWriter =  new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
-            String post_data = URLEncoder.encode("shelter_name", "UTF-8")+ "=" + URLEncoder.encode(sheltername, "UTF-8") + "&" +
-                    URLEncoder.encode("reservation", "UTF-8")+ "=" + URLEncoder.encode(reservation, "UTF-8") + "&" +
-                    URLEncoder.encode("email", "UTF-8") +  "=" +URLEncoder.encode(email, "UTF-8");
+            BufferedWriter bufferedWriter =
+                    new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
+            String post_data = URLEncoder.encode("shelter_name", "UTF-8")
+                    + "=" + URLEncoder.encode(sheltername, "UTF-8") + "&" +
+                    URLEncoder.encode("reservation", "UTF-8")
+                    + "=" + URLEncoder.encode(reservation, "UTF-8") + "&" +
+                    URLEncoder.encode("email", "UTF-8")
+                    +  "=" +URLEncoder.encode(email, "UTF-8");
             bufferedWriter.write(post_data);
             bufferedWriter.flush();
             bufferedWriter.close();
             outputStream.close();
             InputStream inputStream = httpURLConnection.getInputStream();
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
+            BufferedReader bufferedReader =
+                    new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
             String result = "";
             String line = "";
             while((line = bufferedReader.readLine()) != null) {

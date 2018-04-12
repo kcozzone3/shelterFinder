@@ -22,7 +22,8 @@ public class RegistrationScreen extends AppCompatActivity {
         editPassword = findViewById(R.id.registration_password_box);
         usertype = findViewById(R.id.user_type_spinner);
 
-        ArrayAdapter<String> adapterCS = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, UserType.values());
+        ArrayAdapter<String> adapterCS
+                = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, UserType.values());
         adapterCS.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         usertype.setAdapter(adapterCS);
 

@@ -20,7 +20,7 @@ import java.net.URLEncoder;
 
 class BackgroundCancel extends AsyncTask<String, String, String> {
 
-    private Activity context;
+    private final Activity context;
     private AlertDialog alertDialog;
     private String email;
     BackgroundCancel(Activity ctx) {
@@ -31,7 +31,7 @@ class BackgroundCancel extends AsyncTask<String, String, String> {
 
     protected String doInBackground (String... params) {
         email = params[0];
-        String urlpath = "http://128.61.113.183:8888/";
+        String urlpath = "http://128.61.10.116:8888/";
         String reserve_url = urlpath + "cancel_reservation.php";
         try {
             URL url = new URL(reserve_url);
@@ -40,14 +40,17 @@ class BackgroundCancel extends AsyncTask<String, String, String> {
             httpURLConnection.setDoOutput(true);
             httpURLConnection.setDoInput(true);
             OutputStream outputStream = httpURLConnection.getOutputStream();
-            BufferedWriter bufferedWriter =  new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
-            String post_data = URLEncoder.encode("email", "UTF-8") +  "=" +URLEncoder.encode(email, "UTF-8");
+            BufferedWriter bufferedWriter =
+                    new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
+            String post_data =
+                    URLEncoder.encode("email", "UTF-8") +  "=" +URLEncoder.encode(email, "UTF-8");
             bufferedWriter.write(post_data);
             bufferedWriter.flush();
             bufferedWriter.close();
             outputStream.close();
             InputStream inputStream = httpURLConnection.getInputStream();
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
+            BufferedReader bufferedReader =
+                    new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
             String result = "";
             String line = "";
             while((line = bufferedReader.readLine()) != null) {

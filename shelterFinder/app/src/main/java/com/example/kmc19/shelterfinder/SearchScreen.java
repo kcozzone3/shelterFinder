@@ -15,8 +15,8 @@ import java.util.List;
 public class SearchScreen extends AppCompatActivity{
     private CheckBox male, female, famNewborn, children, youngAdult, anyone;
     private EditText shelter;
-    private String age, gender, shelterName;
-    private ArrayList<ShelterInfo> shelterList;
+    private String age, gender;
+    private List<ShelterInfo> shelterList;
     private String email;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,7 +124,7 @@ public class SearchScreen extends AppCompatActivity{
 
     }
     public void onSearch(View view) {
-        shelterName = shelter.getText().toString().toLowerCase();
+        String shelterName = shelter.getText().toString().toLowerCase();
         List<ShelterInfo> filteredNameList = new ArrayList<>();
         List<ShelterInfo> filteredGenderList = new ArrayList<>();
         List<ShelterInfo> filteredAgeList = new ArrayList<>();
@@ -155,7 +155,8 @@ public class SearchScreen extends AppCompatActivity{
         } else {
             for (int i = 0; i < filteredAgeList.size(); i++) {
                 if(filteredAgeList.get(i).getRestrictions().toLowerCase().contains(gender)) {
-                    if (gender.equals("women") || (gender.equals("men") && !filteredAgeList.get(i).getRestrictions().toLowerCase().contains("women"))) {
+                    if (gender.equals("women") || (gender.equals("men")
+                            && !filteredAgeList.get(i).getRestrictions().toLowerCase().contains("women"))) {
                         filteredGenderList.add(filteredAgeList.get(i));
                     }
                 }
@@ -164,7 +165,8 @@ public class SearchScreen extends AppCompatActivity{
 
         Intent intent = new Intent();
         if (filteredGenderList.size() != 0) {
-            intent.putParcelableArrayListExtra("filteredShelters", (ArrayList<ShelterInfo>) filteredGenderList);
+            intent.putParcelableArrayListExtra("filteredShelters",
+                    (ArrayList<ShelterInfo>) filteredGenderList);
             setResult(RESULT_OK, intent);
         }
         finish();

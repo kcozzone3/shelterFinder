@@ -12,7 +12,7 @@ public class ReserveScreen extends AppCompatActivity {
     private String sheltername;
 
     //Need to get Extra
-    private String email, capacity;
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +25,14 @@ public class ReserveScreen extends AppCompatActivity {
         Spinner mspin = findViewById(R.id.reserve_number_spinner);
 
         //get capcity
-        capacity = extras.getString("capacity");
+        String capacity = extras.getString("capacity");
         int CAP = Integer.parseInt(capacity);
         Integer[] items = new Integer[CAP];
         for (int a = 0; a < items.length; a++) {
             items[a] = (a + 1);
         }
-        ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, items);
+        ArrayAdapter<Integer> adapter
+                = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, items);
         mspin.setAdapter(adapter);
 
         //get the number of beds reserved
