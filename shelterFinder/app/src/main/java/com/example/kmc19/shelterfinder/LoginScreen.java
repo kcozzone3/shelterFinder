@@ -54,7 +54,7 @@ public class LoginScreen extends AppCompatActivity {
         });
     }
 
-    public void OnLogin(View view){
+    private void OnLogin(View view){
         String email = emailEt.getText().toString();
         String password = passwordEt.getText().toString();
         String type = "login";

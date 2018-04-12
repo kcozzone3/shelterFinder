@@ -29,7 +29,8 @@ public class RegistrationScreen extends AppCompatActivity {
         userType = findViewById(R.id.user_type_spinner);
 
         ArrayAdapter<String> adapterCS
-                = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, UserType.values());
+                = new ArrayAdapter(this,
+                android.R.layout.simple_spinner_dropdown_item, UserType.values());
         adapterCS.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         userType.setAdapter(adapterCS);
 

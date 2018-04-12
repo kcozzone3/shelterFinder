@@ -29,9 +29,9 @@ class BackgroundWorker extends AsyncTask<String, String, String> {
 
     protected String doInBackground (String... params) {
         String type = params[0];
-        String urlpath = "http://128.61.10.116:8888/";
-        String login_url = urlpath + "login.php";
-        String register_url = urlpath + "register.php";
+        String urlPath = "http://128.61.10.116:8888/";
+        String login_url = urlPath + "login.php";
+        String register_url = urlPath + "register.php";
         if ("login".equals(type)) {
             try {
                 String email = params[1];
@@ -57,7 +57,7 @@ class BackgroundWorker extends AsyncTask<String, String, String> {
                 BufferedReader bufferedReader
                         = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
                 String result = "";
-                String line = "";
+                String line;
                 while((line = bufferedReader.readLine()) != null) {
                     result += line;
                 }
@@ -75,7 +75,7 @@ class BackgroundWorker extends AsyncTask<String, String, String> {
                 String email = params[1];
                 String username = params[2];
                 String password = params[3];
-                String usertype = params[4];
+                String userType = params[4];
                 URL url = new URL(register_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -91,7 +91,7 @@ class BackgroundWorker extends AsyncTask<String, String, String> {
                         URLEncoder.encode("password", "UTF-8")+ "="
                         + URLEncoder.encode(password, "UTF-8") + "&" +
                         URLEncoder.encode("usertype", "UTF-8")+ "="
-                        + URLEncoder.encode(usertype, "UTF-8");
+                        + URLEncoder.encode(userType, "UTF-8");
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
@@ -100,7 +100,7 @@ class BackgroundWorker extends AsyncTask<String, String, String> {
                 BufferedReader bufferedReader =
                         new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
                 String result = "";
-                String line = "";
+                String line;
                 while((line = bufferedReader.readLine()) != null) {
                     result += line;
                 }

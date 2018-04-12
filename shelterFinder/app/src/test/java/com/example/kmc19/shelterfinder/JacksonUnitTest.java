@@ -33,8 +33,7 @@ public class JacksonUnitTest {
 
     @Test (expected = IllegalArgumentException.class)
     public void testNull2() {
-        String str = null;
-        shelter.setShelterName(str);
+        shelter.setShelterName(null);
     }
 
     @Test

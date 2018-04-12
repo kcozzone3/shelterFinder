@@ -33,9 +33,14 @@ public class DetailedInfo extends AppCompatActivity {
         Button reserve = findViewById(R.id.detailed_info_reserve_button);
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-
+        if (bundle.getParcelable("shelterInfo") == null) {
+            throw new NullPointerException("shelterInfo is null");
+        }
         ShelterInfo info = bundle.getParcelable("shelterInfo");
         email = bundle.getString("email");
+        if(info.getShelterName()==null) {
+            throw new NullPointerException("shelterName is null");
+        }
         shelterName.setText(info.getShelterName());
         capacity = info.getCapacity();
         shelterCapacity.setText("Current Capacity = " + info.getCapacity());

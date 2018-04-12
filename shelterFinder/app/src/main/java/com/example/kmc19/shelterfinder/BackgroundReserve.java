@@ -33,8 +33,8 @@ class BackgroundReserve extends AsyncTask<String, String, String> {
         String shelterName = params[0];
         String reservation = params[1];
         email = params[2];
-        String urlpath = "http://128.61.10.116:8888/";
-        String reserve_url = urlpath + "reserve.php";
+        String urlPath = "http://128.61.10.116:8888/";
+        String reserve_url = urlPath + "reserve.php";
 
         try {
             URL url = new URL(reserve_url);
@@ -60,7 +60,7 @@ class BackgroundReserve extends AsyncTask<String, String, String> {
             BufferedReader bufferedReader =
                     new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
             String result = "";
-            String line = "";
+            String line;
             while((line = bufferedReader.readLine()) != null) {
                 result += line;
             }

@@ -27,9 +27,12 @@ public class ReserveScreen extends AppCompatActivity {
         Bundle extras = intent.getExtras();
 
         //Set number of beds one can reserve
-        Spinner bedSpin = findViewById(R.id.reserve_number_spinner);
+        reservation = findViewById(R.id.reserve_number_spinner);
 
-        //get capcity
+        //get capacity
+        if(extras.getString("capacity") == null) {
+            throw new NullPointerException("capacity is null");
+        }
         String capacity = extras.getString("capacity");
 
         int CAP = Integer.parseInt(capacity);
@@ -38,12 +41,8 @@ public class ReserveScreen extends AppCompatActivity {
             items[a] = (a + 1);
         }
         ArrayAdapter<Integer> adapter
-                = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, items);
-        bedSpin.setAdapter(adapter);
-
-
-        //get the number of beds reserved
-        reservation = findViewById(R.id.reserve_number_spinner);
+                = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
+        reservation.setAdapter(adapter);
 
         //get the shelterName
 

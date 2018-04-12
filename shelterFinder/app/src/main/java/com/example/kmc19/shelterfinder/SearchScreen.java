@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The serach screen activity. Users can input certain criteria to filter the shelter list that is
+ * The search screen activity. Users can input certain criteria to filter the shelter list that is
  * displayed to them in the shelter list activity.
  */
 public class SearchScreen extends AppCompatActivity{
@@ -24,7 +24,8 @@ public class SearchScreen extends AppCompatActivity{
     private CheckBox youngAdult;
     private CheckBox anyone;
     private EditText shelter;
-    private String age, gender;
+    private String age;
+    private String gender;
     private List<ShelterInfo> shelterList;
     private String email;
 
@@ -34,6 +35,9 @@ public class SearchScreen extends AppCompatActivity{
         setContentView(R.layout.activity_filter_screen);
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
+        if(extras.getParcelableArrayList("shelterList") == null) {
+            throw new NullPointerException("shelterList is null");
+        }
         shelterList = extras.getParcelableArrayList("shelterList");
         email = extras.getString("email");
         Button searchButton = findViewById(R.id.search_search_button);
@@ -138,7 +142,7 @@ public class SearchScreen extends AppCompatActivity{
      * activity and sends the user back to the shelter list activity.
      * @param view the current view the user sees
      */
-    public void onSearch(View view) {
+    private void onSearch(View view) {
         String shelterName = shelter.getText().toString().toLowerCase();
         List<ShelterInfo> filteredNameList = new ArrayList<>();
         List<ShelterInfo> filteredGenderList = new ArrayList<>();

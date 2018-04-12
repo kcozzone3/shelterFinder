@@ -31,8 +31,8 @@ class BackgroundCancel extends AsyncTask<String, String, String> {
 
     protected String doInBackground (String... params) {
         email = params[0];
-        String urlpath = "http://128.61.10.116:8888/";
-        String reserve_url = urlpath + "cancel_reservation.php";
+        String urlPath = "http://128.61.10.116:8888/";
+        String reserve_url = urlPath + "cancel_reservation.php";
         try {
             URL url = new URL(reserve_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -52,7 +52,7 @@ class BackgroundCancel extends AsyncTask<String, String, String> {
             BufferedReader bufferedReader =
                     new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
             String result = "";
-            String line = "";
+            String line;
             while((line = bufferedReader.readLine()) != null) {
                 result += line;
             }
@@ -76,14 +76,11 @@ class BackgroundCancel extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
         alertDialog.setMessage(result);
-        if(result.equals("Successful Cancellation")) {
+        if("Successful Cancellation".equals(result)) {
             alertDialog.show();
             Intent intent = new Intent(context.getBaseContext(), ShelterList.class);
             intent.putExtra("email", email);
             context.startActivity(intent);
-        } else {
-
-
         }
     }
 }
