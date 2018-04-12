@@ -19,6 +19,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.List;
 
+/**
+ * The shelter map activity. Displays a map that will contain pins representing the shelters that
+ * the user can see on the shelter list activity.
+ */
 public class SheltersMap extends FragmentActivity implements OnMapReadyCallback {
 
     private List<ShelterInfo> shelterList;

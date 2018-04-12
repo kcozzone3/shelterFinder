@@ -8,6 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/**
+ * The login screen activity. Users can enter in their username and password to have it checked in
+ * the database. If matched, they will be sent to the shelter list activity. Users can also use the
+ * guest button to log in with limited capabilities.
+ */
 public class LoginScreen extends AppCompatActivity {
     private EditText emailEt, passwordEt;
     private TextView incorrectLogin;
@@ -29,10 +34,6 @@ public class LoginScreen extends AppCompatActivity {
             }
         });
 
-        /**
-         * When user taps proceed as guest button, activity finishes and switches to ShelterList
-         * View with the permissions of user type Guest.
-         */
         guestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,9 +43,6 @@ public class LoginScreen extends AppCompatActivity {
             }
         });
 
-        /**
-         * On click, activity finishes and user is sent back to the home screen.
-         */
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,8 +59,11 @@ public class LoginScreen extends AppCompatActivity {
         String type = "login";
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
         backgroundWorker.execute(type, email, password);
-
     }
+
+    /**
+     * Sets the incorrect login error message to be visible.
+     */
     public void setIncorrectLogin(){
         incorrectLogin.setVisibility(View.VISIBLE);
     }
