@@ -17,7 +17,12 @@ import java.util.List;
  * displayed to them in the shelter list activity.
  */
 public class SearchScreen extends AppCompatActivity{
-    private CheckBox male, female, famNewborn, children, youngAdult, anyone;
+    private CheckBox male;
+    private CheckBox female;
+    private CheckBox famNewborn;
+    private CheckBox children;
+    private CheckBox youngAdult;
+    private CheckBox anyone;
     private EditText shelter;
     private String age, gender;
     private List<ShelterInfo> shelterList;
@@ -140,7 +145,7 @@ public class SearchScreen extends AppCompatActivity{
         List<ShelterInfo> filteredAgeList = new ArrayList<>();
 
         //filter using shelter name
-        if(shelterName.equals("")){
+        if("".equals(shelterName)){
             filteredNameList = shelterList;
         } else {
             for(int i = 0; i < shelterList.size(); i++) {
@@ -150,7 +155,7 @@ public class SearchScreen extends AppCompatActivity{
             }
         }
         //filter using age
-        if (age.equals("")) {
+        if ("".equals(age)) {
             filteredAgeList = filteredNameList;
         } else {
             for (int i = 0; i < filteredNameList.size(); i++) {
@@ -160,12 +165,12 @@ public class SearchScreen extends AppCompatActivity{
             }
         }
         //filter using gender
-        if (gender.equals("")) {
+        if ("".equals(gender)) {
             filteredGenderList = filteredAgeList;
         } else {
             for (int i = 0; i < filteredAgeList.size(); i++) {
                 if(filteredAgeList.get(i).getRestrictions().toLowerCase().contains(gender)) {
-                    if (gender.equals("women") || (gender.equals("men")
+                    if ("women".equals(gender) || ("men".equals(gender)
                             && !filteredAgeList.get(i).getRestrictions().toLowerCase().contains("women"))) {
                         filteredGenderList.add(filteredAgeList.get(i));
                     }
@@ -174,7 +179,7 @@ public class SearchScreen extends AppCompatActivity{
         }
 
         Intent intent = new Intent();
-        if (filteredGenderList.size() != 0) {
+        if (filteredGenderList.isEmpty()) {
             intent.putParcelableArrayListExtra("filteredShelters",
                     (ArrayList<ShelterInfo>) filteredGenderList);
             setResult(RESULT_OK, intent);

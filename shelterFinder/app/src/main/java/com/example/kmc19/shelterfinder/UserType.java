@@ -10,7 +10,7 @@ public enum UserType {
     Shelter("Shelter");
 
     /** full representation of the UserType String **/
-    private String userType;
+    private final String userType;
 
 
     /**

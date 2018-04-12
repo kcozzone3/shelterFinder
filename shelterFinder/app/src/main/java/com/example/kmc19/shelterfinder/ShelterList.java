@@ -31,7 +31,7 @@ import java.util.List;
  * be displayed.
  */
 public class ShelterList extends AppCompatActivity {
-    private List<ShelterInfo> shelterList = new ArrayList<>();
+    private final List<ShelterInfo> shelterList = new ArrayList<>();
     private List<ShelterInfo> filteredList = new ArrayList<>();
     private ArrayAdapter<ShelterInfo> arrayAdapter;
     private ListView shelterView;
@@ -204,7 +204,7 @@ public class ShelterList extends AppCompatActivity {
             JSONObject obj = jsonArray.getJSONObject(i);
             ShelterInfo shelterInfo = new ShelterInfo();
             shelterInfo.setShelterName(obj.getString("shelter_name"));
-            if(obj.getString("capacity").equals("")){
+            if("".equals(obj.getString("capacity"))){
                 shelterInfo.setCapacity("N/A");
             }else{
                 shelterInfo.setCapacity(obj.getString("capacity"));

@@ -14,7 +14,9 @@ import android.widget.Spinner;
  * in the database.
  */
 public class RegistrationScreen extends AppCompatActivity {
-    private EditText editEmail, editUsername, editPassword;
+    private EditText editEmail;
+    private EditText editUsername;
+    private EditText editPassword;
     private Spinner userType;
 
     @Override

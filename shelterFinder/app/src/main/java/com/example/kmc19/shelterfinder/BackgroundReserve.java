@@ -20,7 +20,7 @@ import java.net.URLEncoder;
 
 class BackgroundReserve extends AsyncTask<String, String, String> {
 
-    private Activity context;
+    private final Activity context;
     private AlertDialog alertDialog;
     private String email;
     BackgroundReserve(Activity ctx) {
@@ -84,7 +84,7 @@ class BackgroundReserve extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
         alertDialog.setMessage(result);
-        if(result.equals("Successful Reservation")) {
+        if("Successful Reservation".equals(result)) {
             alertDialog.show();
             Intent intent = new Intent(context.getBaseContext(), ShelterList.class);
             intent.putExtra("email", email);

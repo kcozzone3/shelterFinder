@@ -81,7 +81,7 @@ class BackgroundCheck extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
         alertDialog.setMessage(result);
-        if(result.equals("False")) {
+        if("False".equals(result)) {
             alertDialog.show();
             Intent intent = new Intent(context.getBaseContext(), ShelterList.class);
             intent.putExtra("email",email);

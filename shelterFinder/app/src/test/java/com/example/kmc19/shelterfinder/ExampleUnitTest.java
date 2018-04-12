@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import static junit.framework.Assert.assertEquals;
 import static org.junit.Assert.*;
 
 /**
@@ -40,25 +41,25 @@ public class ExampleUnitTest {
     @Test
     public void testEmptyString() {
         shelter.setCapacity("");
-        Assert.assertTrue(shelter.getCapacity().equals("N/A"));
+        Assert.assertTrue("N/A".equals(shelter.getCapacity()));
     }
 
     @Test
     public void testEmptyString2() {
         String str = "";
         shelter.setCapacity(str);
-        Assert.assertTrue(shelter.getCapacity().equals("N/A"));
+        Assert.assertTrue("N/A".equals(shelter.getCapacity()));
     }
 
     @Test
     public void testNumbers() {
         shelter.setCapacity("123");
-        Assert.assertTrue(shelter.getCapacity().equals("123"));
+        Assert.assertTrue("123".equals(shelter.getCapacity()));
     }
 
     @Test
     public void testLetters() {
         shelter.setCapacity("One family");
-        Assert.assertTrue(shelter.getCapacity().equals("One family"));
+        Assert.assertTrue("One family".equals(shelter.getCapacity()));
     }
 }

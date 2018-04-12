@@ -11,7 +11,7 @@ import android.widget.Toast;
 class OnSwipeListener implements OnTouchListener {
 
     private final GestureDetector gestureDetector;
-    private Context context;
+    private final Context context;
 
     @Override
     public boolean onTouch(final View view, final MotionEvent motionEvent) {

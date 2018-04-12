@@ -40,25 +40,25 @@ public class JacksonUnitTest {
     @Test
     public void testEmptyString() {
         shelter.setShelterName("");
-        Assert.assertTrue(shelter.getShelterName().equals(""));
+        Assert.assertTrue("".equals(shelter.getShelterName()));
     }
 
     @Test
     public void testEmptyString2() {
         String str = "";
         shelter.setShelterName(str);
-        Assert.assertTrue(shelter.getShelterName().equals(""));
+        Assert.assertTrue("".equals(shelter.getShelterName()));
     }
 
     @Test
     public void testNumbers() {
         shelter.setShelterName("123");
-        Assert.assertTrue(shelter.getShelterName().equals("123"));
+        Assert.assertTrue("123".equals(shelter.getShelterName()));
     }
 
     @Test
     public void testLetters() {
         shelter.setShelterName("One family");
-        Assert.assertTrue(shelter.getShelterName().equals("One family"));
+        Assert.assertTrue("One family".equals(shelter.getShelterName()));
     }
 }

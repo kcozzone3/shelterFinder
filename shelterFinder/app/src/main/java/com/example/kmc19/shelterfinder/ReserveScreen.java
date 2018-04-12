@@ -46,7 +46,7 @@ public class ReserveScreen extends AppCompatActivity {
         reservation = findViewById(R.id.reserve_number_spinner);
 
         //get the shelterName
-;
+
         shelterName = extras.getString("shelterName");
 
         //get email

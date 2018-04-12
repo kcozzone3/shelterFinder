@@ -14,7 +14,8 @@ import android.widget.TextView;
  * guest button to log in with limited capabilities.
  */
 public class LoginScreen extends AppCompatActivity {
-    private EditText emailEt, passwordEt;
+    private EditText emailEt;
+    private EditText passwordEt;
     private TextView incorrectLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class LoginScreen extends AppCompatActivity {
         });
     }
 
-    private void OnLogin(View view){
+    public void OnLogin(View view){
         String email = emailEt.getText().toString();
         String password = passwordEt.getText().toString();
         String type = "login";

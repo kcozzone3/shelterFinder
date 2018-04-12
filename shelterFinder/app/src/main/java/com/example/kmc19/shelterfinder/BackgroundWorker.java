@@ -20,7 +20,7 @@ import java.net.URLEncoder;
 
 class BackgroundWorker extends AsyncTask<String, String, String> {
     private String uniqueEmail = "";
-    private Activity context;
+    private final Activity context;
     private AlertDialog alertDialog;
     BackgroundWorker(Activity ctx) {
         context = ctx;
@@ -32,7 +32,7 @@ class BackgroundWorker extends AsyncTask<String, String, String> {
         String urlpath = "http://128.61.10.116:8888/";
         String login_url = urlpath + "login.php";
         String register_url = urlpath + "register.php";
-        if (type.equals("login")) {
+        if ("login".equals(type)) {
             try {
                 String email = params[1];
                 uniqueEmail = email;
@@ -70,7 +70,7 @@ class BackgroundWorker extends AsyncTask<String, String, String> {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }else if(type == "register") {
+        }else if("register".equals(type)) {
             try {
                 String email = params[1];
                 String username = params[2];
@@ -125,11 +125,11 @@ class BackgroundWorker extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
         alertDialog.setMessage(result);
-        if (result.equals("login success")) {
+        if ("login success".equals(result)) {
             Intent intent = new Intent(context.getBaseContext(), ShelterList.class);
             intent.putExtra("email", uniqueEmail);
             context.startActivity(intent);
-        } else if (result.equals("Register Successful")) {
+        } else if ("Register Successful".equals(result)) {
             alertDialog.show();
             Intent intent = new Intent(context.getBaseContext(), HomeScreen.class);
             context.startActivity(intent);

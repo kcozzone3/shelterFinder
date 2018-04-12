@@ -13,7 +13,8 @@ import android.widget.TextView;
  */
 public class DetailedInfo extends AppCompatActivity {
     private TextView shelterName;
-    private String email, capacity;
+    private String email;
+    private String capacity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Need to get Extra
