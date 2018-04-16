@@ -81,8 +81,7 @@ class ShelterInfo implements Parcelable {
     }
     @Override
     public String toString() {
-        return
-                shelterName  + " \n" + "Current Capacity: " +
+        return shelterName  + " \n" + "Current Capacity: " +
                 capacity;
     }
 
@@ -118,8 +117,15 @@ class ShelterInfo implements Parcelable {
     }
 
     public void setSpecialNotes(String specialNotes) {
-        this.specialNotes = specialNotes;
+        if (specialNotes == null) {
+            throw new IllegalArgumentException("Special notes can not be null.");
+        } else if (specialNotes.equals("")) {
+            this.specialNotes = "N/A";
+        } else {
+            this.specialNotes = specialNotes;
+        }
     }
+
 
     public void setPhone(String phone) {
         this.phone = phone;
