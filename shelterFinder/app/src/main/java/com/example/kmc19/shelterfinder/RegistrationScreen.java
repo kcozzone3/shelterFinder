@@ -1,8 +1,13 @@
 package com.example.kmc19.shelterfinder;
 
+import android.annotation.TargetApi;
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.Fade;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.view.View;
@@ -13,6 +18,7 @@ import android.widget.Spinner;
  * The registration screen activity. Users can enter in their name, email, and password to register
  * in the database.
  */
+@TargetApi(21)
 public class RegistrationScreen extends AppCompatActivity {
     private EditText editEmail;
     private EditText editUsername;
@@ -21,7 +27,13 @@ public class RegistrationScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final boolean isLollipop = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
         super.onCreate(savedInstanceState);
+        if (isLollipop) {
+            getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+            getWindow().setEnterTransition(new Fade(Fade.IN));
+            getWindow().setExitTransition(new Fade(Fade.OUT));
+        }
         setContentView(R.layout.activity_registration_screen);
         editEmail = findViewById(R.id.registration_email_box);
         editUsername = findViewById(R.id.registration_name_box);
@@ -61,7 +73,11 @@ public class RegistrationScreen extends AppCompatActivity {
         startActivity(new Intent(this, HomeScreen.class));
     }
 
-
+    private void animatedStart(Intent intent) {
+        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(RegistrationScreen.this)
+                .toBundle());
+        finish();
+    }
 }
 
 

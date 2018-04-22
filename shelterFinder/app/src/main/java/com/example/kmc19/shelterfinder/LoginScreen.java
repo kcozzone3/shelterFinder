@@ -1,10 +1,15 @@
 package com.example.kmc19.shelterfinder;
 
+import android.annotation.TargetApi;
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.Fade;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,6 +19,7 @@ import android.widget.TextView;
  * the database. If matched, they will be sent to the shelter list activity. Users can also use the
  * guest button to log in with limited capabilities.
  */
+@TargetApi(21)
 public class LoginScreen extends AppCompatActivity {
     private EditText emailEt;
     private EditText passwordEt;
@@ -21,7 +27,13 @@ public class LoginScreen extends AppCompatActivity {
     protected int clickCount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final boolean isLollipop = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
         super.onCreate(savedInstanceState);
+        if (isLollipop) {
+            getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+            getWindow().setEnterTransition(new Fade(Fade.IN));
+            getWindow().setExitTransition(new Fade(Fade.OUT));
+        }
         setContentView(R.layout.activity_login_screen);
         Button loginButton = findViewById(R.id.login_button);
         Button guestButton = findViewById(R.id.guest_button);
@@ -41,8 +53,12 @@ public class LoginScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), ShelterList.class);
-                finish();
-                startActivity(intent);
+                if (isLollipop) {
+                    animatedStart(intent);
+                } else {
+                    finish();
+                    startActivity(intent);
+                }
             }
         });
 
@@ -50,14 +66,18 @@ public class LoginScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), HomeScreen.class);
-                finish();
-                startActivity(intent);
+                if (isLollipop) {
+                    animatedStart(intent);
+                } else {
+                    finish();
+                    startActivity(intent);
+                }
             }
         });
     }
 
     private void OnLogin(View view){
-        clickCount = clickCount+1;
+        clickCount = clickCount + 1;
         String email = emailEt.getText().toString();
         String password = passwordEt.getText().toString();
         String type = "login";
@@ -72,5 +92,11 @@ public class LoginScreen extends AppCompatActivity {
      */
     public void setIncorrectLogin(){
         incorrectLogin.setVisibility(View.VISIBLE);
+    }
+
+    private void animatedStart(Intent intent) {
+        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(LoginScreen.this)
+                .toBundle());
+        finish();
     }
 }

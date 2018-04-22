@@ -20,8 +20,7 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         if (isLollipop) {
             getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
-            getWindow().setEnterTransition(new Explode());
-            getWindow().setExitTransition(new Fade());
+            getWindow().setExitTransition(new Fade(Fade.OUT));
         }
         setContentView(R.layout.activity_splash_screen);
 

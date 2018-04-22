@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.transition.Explode;
 import android.transition.Fade;
 import android.view.View;
 import android.view.Window;
@@ -26,8 +25,8 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         if (isLollipop) {
             getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
-            getWindow().setEnterTransition(new Fade());
-            getWindow().setExitTransition(new Fade());
+            getWindow().setEnterTransition(new Fade(Fade.IN));
+            getWindow().setExitTransition(new Fade(Fade.OUT));
         }
         setContentView(R.layout.activity_home_screen);
         Button login_button = findViewById(R.id.login_button);
@@ -63,4 +62,5 @@ public class HomeScreen extends AppCompatActivity {
                 .toBundle());
         finish();
     }
+
 }
