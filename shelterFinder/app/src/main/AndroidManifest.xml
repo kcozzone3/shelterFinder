@@ -20,7 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeScreen">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,7 +47,8 @@
 
         <activity
             android:name=".SheltersMap"
-            android:label="@string/title_activity_shelters_map"></activity>
+            android:label="@string/title_activity_shelters_map" />
+        <activity android:name=".HomeScreen"/>
     </application>
 
 </manifest>
