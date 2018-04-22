@@ -47,7 +47,7 @@ public class ShelterList extends AppCompatActivity {
         setContentView(R.layout.activity_shelter_list);
         shelterView = findViewById(R.id.shelter_list_view);
         email = getIntent().getStringExtra("email");
-        getJSON("http://128.61.10.116:8888/retrieve_data.php");
+        getJSON("http://128.61.3.20:8888/retrieve_data.php");
         Context context = getApplicationContext();
         String text = "Swipe right to search\n\nSwipe left for map view";
         int duration = Toast.LENGTH_LONG;

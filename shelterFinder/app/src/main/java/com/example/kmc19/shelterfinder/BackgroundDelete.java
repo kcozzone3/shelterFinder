@@ -17,27 +17,22 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-class BackgroundCheck extends AsyncTask<String, String, String> {
+
+class BackgroundDelete extends AsyncTask<String, String, String> {
+
     private final Activity context;
     private AlertDialog alertDialog;
-    private final String email;
-    private final String shelterName;
-    private final String numSpots;
-    BackgroundCheck(Activity ctx, String email, String shelterName, String numSpots) {
+    private String email;
+    BackgroundDelete(Activity ctx) {
         context = ctx;
-        this.email = email;
-        this.shelterName = shelterName;
-        this.numSpots = numSpots;
     }
-
-
 
     @Override
 
     protected String doInBackground (String... params) {
+        email = params[0];
         String urlPath = "http://128.61.3.20:8888/";
-        String reserve_url = urlPath + "check_reservation.php";
-
+        String reserve_url = urlPath + "user_deletion.php";
         try {
             URL url = new URL(reserve_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -48,7 +43,7 @@ class BackgroundCheck extends AsyncTask<String, String, String> {
             BufferedWriter bufferedWriter =
                     new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
             String post_data =
-                    URLEncoder.encode("email", "UTF-8")+ "=" + URLEncoder.encode(email, "UTF-8");
+                    URLEncoder.encode("email", "UTF-8") +  "=" +URLEncoder.encode(email, "UTF-8");
             bufferedWriter.write(post_data);
             bufferedWriter.flush();
             bufferedWriter.close();
@@ -75,22 +70,17 @@ class BackgroundCheck extends AsyncTask<String, String, String> {
     @Override
     protected void onPreExecute() {
         alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("Checking Reservation Status");
+        alertDialog.setTitle("Deletion Status");
     }
 
     @Override
     protected void onPostExecute(String result) {
         alertDialog.setMessage(result);
-        if("False".equals(result)) {
+        if("Successful Deletion".equals(result)) {
             alertDialog.show();
             Intent intent = new Intent(context.getBaseContext(), ShelterList.class);
-            intent.putExtra("email",email);
+            intent.putExtra("email", email);
             context.startActivity(intent);
-        } else {
-            BackgroundReserve backgroundReserve = new BackgroundReserve(context);
-            backgroundReserve.execute(shelterName, numSpots, email);
         }
     }
-
-
 }

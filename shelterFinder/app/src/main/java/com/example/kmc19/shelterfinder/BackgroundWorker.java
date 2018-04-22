@@ -22,6 +22,8 @@ class BackgroundWorker extends AsyncTask<String, String, String> {
     private String uniqueEmail = "";
     private final Activity context;
     private AlertDialog alertDialog;
+    private int count =0;
+    private String globalEmail;
     BackgroundWorker(Activity ctx) {
         context = ctx;
     }
@@ -29,14 +31,17 @@ class BackgroundWorker extends AsyncTask<String, String, String> {
 
     protected String doInBackground (String... params) {
         String type = params[0];
-        String urlPath = "http://128.61.10.116:8888/";
+        String urlPath = "http://128.61.3.20:8888/";
         String login_url = urlPath + "login.php";
         String register_url = urlPath + "register.php";
         if ("login".equals(type)) {
             try {
                 String email = params[1];
                 uniqueEmail = email;
+                globalEmail = uniqueEmail;
                 String password = params[2];
+                String clickCount = params[3];
+                count = Integer.valueOf(clickCount);
                 URL url = new URL(login_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -133,6 +138,14 @@ class BackgroundWorker extends AsyncTask<String, String, String> {
             alertDialog.show();
             Intent intent = new Intent(context.getBaseContext(), HomeScreen.class);
             context.startActivity(intent);
+        } else if (count == 3) {
+            alertDialog.setMessage("This is your third attempt; the system will delete your credential with one more incorrect try");
+            alertDialog.show();
+        } else if (count == 4) {
+            BackgroundDelete backgroundDelete = new BackgroundDelete(context);
+            backgroundDelete.execute(globalEmail);
+            alertDialog.setMessage("Fourth time error try. User account deleted");
+            alertDialog.show();
         }
         else {
             ((LoginScreen)context).setIncorrectLogin();

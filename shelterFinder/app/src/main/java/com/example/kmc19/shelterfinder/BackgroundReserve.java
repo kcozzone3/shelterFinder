@@ -33,7 +33,7 @@ class BackgroundReserve extends AsyncTask<String, String, String> {
         String shelterName = params[0];
         String reservation = params[1];
         email = params[2];
-        String urlPath = "http://128.61.10.116:8888/";
+        String urlPath = "http://128.61.3.20:8888/";
         String reserve_url = urlPath + "reserve.php";
 
         try {

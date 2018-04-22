@@ -3,6 +3,7 @@ package com.example.kmc19.shelterfinder;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +18,7 @@ public class LoginScreen extends AppCompatActivity {
     private EditText emailEt;
     private EditText passwordEt;
     private TextView incorrectLogin;
+    protected int clickCount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +29,7 @@ public class LoginScreen extends AppCompatActivity {
         emailEt = findViewById(R.id.id_inputfield);
         passwordEt = findViewById(R.id.password_inputfield);
         incorrectLogin = findViewById(R.id.login_incorrect_creds);
-
+        clickCount = 0;
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,11 +57,14 @@ public class LoginScreen extends AppCompatActivity {
     }
 
     private void OnLogin(View view){
+        clickCount = clickCount+1;
         String email = emailEt.getText().toString();
         String password = passwordEt.getText().toString();
         String type = "login";
+        String countString = String.valueOf(clickCount);
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute(type, email, password);
+        backgroundWorker.execute(type, email, password, countString);
+
     }
 
     /**
