@@ -35,7 +35,7 @@ class BackgroundCheck extends AsyncTask<String, String, String> {
     @Override
 
     protected String doInBackground (String... params) {
-        String urlPath = "http://128.61.3.20:8888/";
+        String urlPath = "http://128.61.119.74:8888/";
         String reserve_url = urlPath + "check_reservation.php";
 
         try {

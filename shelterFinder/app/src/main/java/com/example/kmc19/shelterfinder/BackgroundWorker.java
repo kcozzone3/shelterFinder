@@ -1,5 +1,6 @@
 package com.example.kmc19.shelterfinder;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.app.AlertDialog;
@@ -14,12 +15,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.lang.annotation.Target;
 import java.net.MalformedURLException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
-
+@TargetApi(21)
 class BackgroundWorker extends AsyncTask<String, String, String> {
     private String uniqueEmail = "";
     private final Activity context;
@@ -33,7 +35,7 @@ class BackgroundWorker extends AsyncTask<String, String, String> {
 
     protected String doInBackground (String... params) {
         String type = params[0];
-        String urlPath = "http://128.61.3.20:8888/";
+        String urlPath = "http://128.61.119.74:8888/";
         String login_url = urlPath + "login.php";
         String register_url = urlPath + "register.php";
         if ("login".equals(type)) {
@@ -135,11 +137,15 @@ class BackgroundWorker extends AsyncTask<String, String, String> {
         if ("login success".equals(result)) {
             Intent intent = new Intent(context.getBaseContext(), ShelterList.class);
             intent.putExtra("email", uniqueEmail);
-            context.startActivity(intent);
+            context.startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(context)
+                    .toBundle());
+            context.finish();
         } else if ("Register Successful".equals(result)) {
             alertDialog.show();
             Intent intent = new Intent(context.getBaseContext(), HomeScreen.class);
-            context.startActivity(intent);
+            context.startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(context)
+                    .toBundle());
+            context.finish();
         } else if (count == 3) {
             alertDialog.setMessage("This is your third attempt; the system will delete your credential with one more incorrect try");
             alertDialog.show();

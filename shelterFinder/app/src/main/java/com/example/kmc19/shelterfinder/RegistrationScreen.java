@@ -69,8 +69,8 @@ public class RegistrationScreen extends AppCompatActivity {
      * @param view the current view which the user sees
      */
     public void OnCancel(View view) {
-        finish();
-        startActivity(new Intent(this, HomeScreen.class));
+        Intent intent = new Intent(this, HomeScreen.class);
+        animatedStart(intent);
     }
 
     private void animatedStart(Intent intent) {

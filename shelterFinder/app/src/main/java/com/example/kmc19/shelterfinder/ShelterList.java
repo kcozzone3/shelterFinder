@@ -1,13 +1,17 @@
 package com.example.kmc19.shelterfinder;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.Fade;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -30,6 +34,7 @@ import java.util.List;
  * If user has used the search screen activity, only shelters that follow the given criteria will
  * be displayed.
  */
+@TargetApi(21)
 public class ShelterList extends AppCompatActivity {
     private final List<ShelterInfo> shelterList = new ArrayList<>();
     private List<ShelterInfo> filteredList = new ArrayList<>();
@@ -43,11 +48,17 @@ public class ShelterList extends AppCompatActivity {
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final boolean isLollipop = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
         super.onCreate(savedInstanceState);
+        if (isLollipop) {
+            getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+            getWindow().setEnterTransition(new Fade(Fade.IN));
+            overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+        }
         setContentView(R.layout.activity_shelter_list);
         shelterView = findViewById(R.id.shelter_list_view);
         email = getIntent().getStringExtra("email");
-        getJSON("http://128.61.3.20:8888/retrieve_data.php");
+        getJSON("http://128.61.119.74:8888/retrieve_data.php");
         Context context = getApplicationContext();
         String text = "Swipe right to search\n\nSwipe left for map view";
         int duration = Toast.LENGTH_LONG;
