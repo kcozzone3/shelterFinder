@@ -34,7 +34,6 @@ import java.util.List;
  * If user has used the search screen activity, only shelters that follow the given criteria will
  * be displayed.
  */
-@TargetApi(21)
 public class ShelterList extends AppCompatActivity {
     private final List<ShelterInfo> shelterList = new ArrayList<>();
     private List<ShelterInfo> filteredList = new ArrayList<>();
@@ -48,13 +47,7 @@ public class ShelterList extends AppCompatActivity {
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final boolean isLollipop = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
         super.onCreate(savedInstanceState);
-        if (isLollipop) {
-            getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
-            getWindow().setEnterTransition(new Fade(Fade.IN));
-            overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
-        }
         setContentView(R.layout.activity_shelter_list);
         shelterView = findViewById(R.id.shelter_list_view);
         email = getIntent().getStringExtra("email");
@@ -91,6 +84,7 @@ public class ShelterList extends AppCompatActivity {
                 extras.putString("email", email);
                 intent.putExtras(extras);
                 startActivityForResult(intent, 1);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
             }
 
             @Override
@@ -100,6 +94,7 @@ public class ShelterList extends AppCompatActivity {
                         filteredList.isEmpty() ? (ArrayList<ShelterInfo>) shelterList :
                                 (ArrayList<ShelterInfo>) filteredList);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
             }
         });
 
@@ -132,8 +127,9 @@ public class ShelterList extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), HomeScreen.class);
-                finish();
                 startActivity(intent);
+                finish();
+                overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
             }
         });
     }

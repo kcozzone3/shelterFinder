@@ -32,6 +32,7 @@ public class SearchScreen extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         setContentView(R.layout.activity_filter_screen);
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -131,6 +132,7 @@ public class SearchScreen extends AppCompatActivity{
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), ShelterList.class);
                 finish();
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 intent.putExtra("email",email);
             }
         });
@@ -182,13 +184,14 @@ public class SearchScreen extends AppCompatActivity{
             }
         }
 
-        Intent intent = new Intent();
+        Intent intent = new Intent(getBaseContext(), ShelterList.class);
         if (filteredGenderList.isEmpty()) {
             intent.putParcelableArrayListExtra("filteredShelters",
                     (ArrayList<ShelterInfo>) filteredGenderList);
             setResult(RESULT_OK, intent);
         }
         finish();
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
 }

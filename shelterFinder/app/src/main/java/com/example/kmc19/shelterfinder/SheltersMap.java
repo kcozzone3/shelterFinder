@@ -43,6 +43,7 @@ public class SheltersMap extends FragmentActivity implements OnMapReadyCallback 
     protected void onCreate(Bundle savedInstanceState) {
         email = getIntent().getStringExtra("email");
         super.onCreate(savedInstanceState);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         setContentView(R.layout.activity_shelter_map);
         Button exit = findViewById(R.id.map_exit);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -56,6 +57,7 @@ public class SheltersMap extends FragmentActivity implements OnMapReadyCallback 
                 Intent intent = new Intent(getBaseContext(), ShelterList.class);
                 intent.putExtra("email", email);
                 finish();
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }
         });
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
